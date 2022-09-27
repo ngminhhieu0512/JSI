@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="../css/ticket.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div class="header-left">
+          <a href="../html/home.html">
+          <img src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/ghost.png" alt="">
+          </a>
+        </div>
+        <div class="header-center">
+          <div class="home">
+            <h1><a href="../html/home.html">Home</a></h1>
+          </div>
+          <div class="shop">
+            <h1><a href="../html/preshop.html">Shop</a></h1>
+          </div>
+          <div class="contact">
+            <h1><a href="../html/contact.html">Contact</a></h1>
+        </div>
+        </div>
+        <div class="header-right">
+          <input type="search" placeholder="Search" />
+          <div class="cart">
+            <a href="../html/cart.html">
+            <img
+              src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
+              alt=""
+            />
+            </a>
+          </div>
+          <div class="account">
+            <img
+              src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/FFFFFF/external-account-social-media-interface-anggara-glyph-anggara-putra.png"
+              alt=""
+              onclick="showAccount()"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="account">
+        <a href="../html/cart.html"><h2>Your cart</h2></a>
+        <a href="../html/login.html"><h2>Log in</h2></a>
+        <a href="../html/signup.html"><h2>Create a new account</h2></a>
+        <h2 id="sign-out">Sign out</h2>
+      </div>
+
+      <!-- content -->
+      <h1 class="title">🎃 PURCHASE TICKET FOR THE PARTY 🎃</h1>
+      <div id="container">
+        <div class="option single">
+            <h1>Single Option</h1>
+            <div>1</div>
+            <p>Ticket for one</p>
+            <h3>50.000 VND</h3>
+        </div>
+        <div class="option couple">
+            <h1>Couple Option</h1>
+            <div>2</div>
+            <p>Tickets for two</p>
+            <h3>90.000 VND</h3>
+        </div>
+        <div class="option triple">
+            <h1>Triple Option</h1>
+            <div>3</div>
+            <p>Tickets for three</p>
+            <h3>120.000 VND</h3>
+        </div>
+        <div class="option family">
+            <h1>"Family" Option</h1>
+            <div>+</div>
+            <p>Tickets for 4 or more</p>
+            <h3>35.000 VND<br> per person</h3>
+        </div>
+      </div>
+
+      <div id="alert">
+        <h1>You need to log in first in order to buy tickets for the party</h1>
+        <a href="../html/login.html"><h2>Log in here</h2></a>
+      </div>
+
+      <div class="order-quantity">
+        <button id="decrease" onclick="decrease()">-</button>
+        <div id="quantity-number"></div>
+        <button id="increase" onclick="increase()">+</button>
+        <h2 id="total"></h2>
+      </div>
+      <button class="addtocart" id="add-product" onclick="addToCart()"><h2>Add to cart</h2></button>
+
+      <div id="total-quantity"></div>
+
+      <!-- Footer -->
+    <section id="footer">
+        <h1>About us</h1>
+        <h1>Contact us</h1>
+        <div class="social-media">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="">
+          <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="">
+          <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="">
+        </div>
+        <a href="../html/ticket.html"><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a>
+      </section>
+
+      <script src="../javascript/ticket.js"></script>
+      <script type="module" src="../javascript/auth.js"></script>
+      <script type="module">
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+  
+        onAuthStateChanged(auth, (user) => {
+        if (user) {
+          console.log(user);
+        } else {
+          document.getElementById("alert").style.display = "block";
+
+       }
+      });
+      </script>
+</body>
+</html>

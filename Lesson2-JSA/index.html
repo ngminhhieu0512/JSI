@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnifood2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div id="header">
+            <img class="logo" src="./logo-white.png" alt="">
+            <div class="menu">
+                <span class="header_menu">FOOD DELIVERY</span>
+                <span class="header_menu">HOW IT WORKS</span>
+                <span class="header_menu">OUR CITIES</span>
+                <span class="header_menu">SIGN UP</span>
+            </div>
+        </div>
+    </header>
+    <h1 class="page1">
+        GOODBYE JUNK FOOD. <br>
+        HELLO SUPER HEALTHY MEALS.
+    </h1>
+    <div class="buttons">
+        <p class="p1">I am hungry</p>
+        <p class="p11">Show me more</p>
+    </div>
+
+
+    <div id="container2">
+        <h1 class="page2">GET FOOD FAST - NOT FAST FOOD</h1>
+        <h2 class="add">___________</h2>
+        <p class="p2">
+            Hello, we are Omnifood, your new premium food delivery service. We know you are<br>
+            always busy. No time for cooking. So let us take care of that, we are really good at it,<br>
+            we promise!
+        </p>
+        <div id="features">
+            <div class="smallfeature">
+                <img class="smallicon" src="./icons8-infinity-48.png" alt="">
+                <h1 class="sft">UP TO 365 DAYS/YEAR</h1>
+                <p class="sftp">Never cook again! We really mean that. Our subscription plans include up to 365
+                    days/year coverage. You can also choose to order more flexibly if that's your style.</p>
+            </div>
+
+
+            <div class="smallfeature">
+                <img class="smallicon" src="./icons8-clock-50.png" alt="">
+                <h1 class="sft">READY IN 20 MINUTES</h1>
+                <p class="sftp">You're only twenty minutes away from your delicious and super healthy meals delivered
+                    right to your home. We work with the best chefs in each town to ensure that you're 100% happy.</p>
+            </div>
+
+
+            <div class="smallfeature">
+                <img class="smallicon" src="./icons8-carrot-50.png" alt="">
+                <h1 class="sft">100% ORGANIC</h1>
+                <p class="sftp">All our vegetables are fresh, organic and local. Animals are raised without added
+                    hormones or antibiotics. Good for your health, the environment, and it also tastes better!</p>
+            </div>
+
+
+            <div class="smallfeature">
+                <img class="smallicon" src="./icons8-trolley-48.png" alt="">
+                <h1 class="sft">ORDER ANYTHING</h1>
+                <p class="sftp">We don't limit your creativity, which means you can order whatever you feel like. You
+                    can also choose from our menu containing over 100 delicious meals. It's up to you!</p>
+            </div>
+        </div>
+        <div id="zoompics">
+            <div class="zoompic_wrap"><img class="zoompic" src="./1.jpg" alt=""></div>
+            <div class="zoompic_wrap"><img class="zoompic" src="./2.jpg" alt=""></div>
+            <div class="zoompic_wrap"><img class="zoompic" src="./3.jpg" alt=""></div>
+            <div class="zoompic_wrap"><img class="zoompic" src="./4.jpg" alt=""></div>
+            <div class="zoompic_wrap"><img class="zoompic" src="./5.jpg" alt=""></div>
+            <div class="zoompic_wrap"><img class="zoompic" src="./6.jpg" alt=""></div>
+            <div class="zoompic_wrap"><img class="zoompic" src="./7.jpg" alt=""></div>
+            <div class="zoompic_wrap"><img class="zoompic" src="./8.jpg" alt=""></div>
+
+        </div>
+
+        <div id="container3">
+            <h1 class="title">HOW IT WORKS - SIMPLE AS 1, 2, 3</h1>
+            <h2 class="add">___________</h2>
+            <div class="description">
+            <ul>
+                <li class="part3">Choose the subscription plan that best fits your needs and sign up today.</li>
+                <li class="part3">Order our delicious meal using our mobile app or website. Or you can even call us!</li>
+                <li class="part3">Enjoy your meal after less than 20 minutes. See you the next time.</li>
+            </ul>
+            <ul class="pic_ul">
+                <li><img src="https://img.icons8.com/color/50/star--v1.png" alt=""></li>
+                <li><img src="https://img.icons8.com/color/50/star--v1.png" alt=""></li>
+                <li><img src="https://img.icons8.com/color/50/star--v1.png" alt=""></li>
+            </ul>
+            </div>
+            <img src="./download-app-android.png" class="download1" alt="">
+            <img src="./apple-download.PNG" class="download" alt="">
+            <img src="./app-iPhone.png" class="iphone" alt="">
+        </div>
+
+
+        <h1 class="title">WE ARE HAPPY TO HEAR FROM YOU</h1>
+        <h2 class="add">___________</h2>
+
+
+
+
+        <div id="container5">
+            <ul class="type">
+                <li class="tp">Name</li>
+                <li class="tp">Email</li>
+                <li class="tp">How did you find us?</li>
+                <li class="tp">Newsletter</li>
+                <li class="tp">Drop us a line</li>
+            </ul>
+
+            <ul class="info">
+                <form action="" onsubmit="validateForm()" name="bigform">
+                <li><input type="text" id="ho_ten" placeholder="Your name" required></li>
+                <li><input type="text" id="mail" placeholder="Your email - Format: [...]@gmail.com" pattern="[a-z]+@gmail.com" required></li>
+                <li><select name="source" id="srcs">
+                        <option value="friends">FRIENDS</option>
+                        <option value="search_engine">SEARCH ENGINE</option>
+                        <option value="advertisement">ADVERTISEMENT</option>
+                        <option value="other">OTHER</option>
+                    </select></li>
+                <li><input type="checkbox" id="news">
+                    <label for="news"><span class="label">Yes, Please</span></label>
+                </li>
+                <li><textarea id="message" cols="30" rows="10" placeholder="Your message"></textarea></li>
+            </ul>
+        </div>
+        <input type="submit" value="Send it" class="submit">
+    </form>
+
+    </div>
+
+<script>
+    function validateForm(){
+        var a = document.forms["bigform"]["ho_ten"].value;
+        var b = document.forms["bigform"]["mail"].value;
+        var c = document.forms["bigform"]["message"].value;
+        alert("Your name: " + a + " Your email: " + b + " Your message: " + c);
+    }
+</script>
+
+</body>
+
+</html>

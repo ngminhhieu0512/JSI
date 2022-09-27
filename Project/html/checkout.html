@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div class="header-left">
+          <a href="../html/home.html">
+          <img src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/ghost.png" alt="">
+          </a>
+        </div>
+        <div class="header-center">
+          <div class="home">
+            <h1><a href="../html/home.html">Home</a></h1>
+          </div>
+          <div class="shop">
+            <h1><a href="../html/preshop.html">Shop</a></h1>
+          </div>
+          <div class="contact">
+            <h1><a href="../html/contact.html">Contact</a></h1>
+        </div>
+        </div>
+        <div class="header-right">
+          <input type="search" placeholder="Search" />
+          <div class="cart">
+            <a href="../html/cart.html">
+            <img
+              src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
+              alt=""
+            />
+            </a>
+          </div>
+          <div class="account">
+            <img
+              src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/FFFFFF/external-account-social-media-interface-anggara-glyph-anggara-putra.png"
+              alt=""
+              onclick="showAccount()"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="account">
+        <a href="../html/cart.html"><h2>Your cart</h2></a>
+        <a href="../html/login.html"><h2>Log in</h2></a>
+        <a href="../html/signup.html"><h2>Create a new account</h2></a>
+        <h2 id="sign-out">Sign out</h2>
+      </div>
+
+            <!-- content -->
+            <div id="cover">
+            <h1>Checkout</h1>
+            <div id="container">
+              <div class="customer-info">
+                <h2 class="customer-info-title">Your Information</h2>
+
+                <form id="information" onsubmit="changePage()" action="">
+                <input type="text" placeholder="First Name" class="name-input" id="first-name" required>
+                <input type="text" placeholder="Last Name" class="name-input" id="last-name" required>
+                <h2 class="gender">Gender:</h2>
+                <input type="checkbox"><h3>Male</h3>
+                <input type="checkbox"><h3>Female</h3>
+                <input type="tel" placeholder="Phone number (0-[9 numbers])" pattern="0+[0-9]{9}" class="phone-input" id="phone-number"><br>
+                <input type="text" placeholder="Your Address" class="address-input" id="address"><br>
+                <input type="text" placeholder="Promotion Code" class="promocode-input" id="promo-code">
+                <h2 class="payment-method">Payment method:</h2>
+                <img class="cash" onclick="selectPayment()" src="https://img.icons8.com/color/48/000000/cash-.png"/>
+                <img class="visa" src="https://img.icons8.com/color/48/000000/visa.png"/>
+                <img class="apple-pay" src="https://img.icons8.com/ios-filled/50/000000/apple-pay.png"/>
+                <img class="master-card" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-mastercard-incorporated-an-american-multinational-financial-services-corporation-logo-color-tal-revivo.png"/>
+                <div class="note-cover">
+                  <div class="note">
+                    <img class="note-img" src="https://img.icons8.com/material-outlined/24/000000/lock--v1.png"/>
+                    <h2 class="notice">Your information<br>is safe</h2>
+                  </div>
+                  <div class="note">
+                    <img class="note-img" src="https://img.icons8.com/android/24/000000/checked-2.png"/>
+                    <h2 class="notice">Secure checkout</h2>
+                  </div>
+                </div>
+                <button class="continue-checkout" onclick="saveInfo()">Save information</button>
+                <a href="../html/bill.html"><div id="gotobill"><div>Your bill</div></div></a>
+                </form>
+              </div>
+              <div class="products">
+                <table id="table">
+      
+                </table>
+                <div class="total-div">
+                <h2 class="total">Total:</h2>
+                <h2 id="total-price"></h2>
+              </div>
+      
+              </div>
+            </div>
+            </div>
+
+      <!-- Footer -->
+    <section id="footer">
+        <h1>About us</h1>
+        <h1>Contact us</h1>
+        <div class="social-media">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="">
+          <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="">
+          <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="">
+        </div>
+        <a href="../html/ticket.html"><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a>
+      </section>
+
+      <script src="../javascript/checkout.js"></script>
+      <script type="module" src="../javascript/auth.js"></script>
+</body>
+</html>
+</body>
+</html>

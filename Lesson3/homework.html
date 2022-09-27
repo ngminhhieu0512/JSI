@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Bài 1
+      // class Animal {
+      //     constructor(name) {
+      //         this.name = name;
+      //     }
+      // }
+
+      // class Rabbit extends Animal {
+      //     constructor(name) {
+      //         super(name);
+      //     }
+      // }
+
+      // let rabbit = new Rabbit("White Rabbit");
+      // alert(rabbit.name);
+
+      // Bài 2
+      class Clock {
+          constructor({template}) {
+              this.template = template;
+          }
+
+          render(){
+              let date = new Date();
+
+              let hours = date.getHours();
+              if (hours < 10) hours = "0" + hours;
+
+              let mins = date.getMinutes();
+              if (mins < 10) mins = "0" + mins;
+
+              let secs = date.getSeconds();
+              if (secs < 10) secs = "0" + secs;
+
+              let output = this.template
+              .replace('h', hours)
+              .replace('m', mins)
+              .replace('s', secs);
+
+              console.log(output);
+          }
+
+          stop() {
+              clearInterval(this.timer);
+          }
+
+          start() {
+              this.render();
+              this.timer = setInterval(() => this.render(), 1000);
+          }
+
+      }
+
+      class ExtendedClock extends Clock {
+        constructor(options) {
+          super(options);
+          let { precision = 1000 } = options;
+          this.precision = precision;
+        }
+
+        start() {
+          this.render();
+          this.timer = setInterval(() => this.render(), this.precision);
+        }
+      }
+
+      // Bài 3
+      class PhanSo {
+        constructor(tuSo1, mauSo1, tuSo2, mauSo2) {
+          this.tuSo1 = tuSo1;
+          this.mauSo1 = mauSo1;
+          this.tuSo2 = tuSo2;
+          this.mauSo2 = mauSo2;
+        }
+
+        plus() {
+          console.log(this.tuSo1 / this.mauSo1 + this.tuSo2 / this.mauSo2);
+        }
+
+        minus() {
+          console.log(this.tuSo1 / this.mauSo1 - this.tuSo2 / this.mauSo2);
+        }
+
+        multiply() {
+          console.log((this.tuSo1 / this.mauSo1) * (this.tuSo2 / this.mauSo2));
+        }
+        divide() {
+          console.log(this.tuSo1 / this.mauSo1 / (this.tuSo2 / this.mauSo2));
+        }
+      }
+
+      class phanso extends PhanSo {
+        constructor(tuSo1, mauSo1, tuSo2, mauSo2) {
+          super(tuSo1, mauSo1, tuSo2, mauSo2);
+        }
+      }
+
+      var ps = new phanso(14, 33, 65, 92);
+      ps.plus();
+      ps.minus();
+      ps.multiply();
+      ps.divide();
+    </script>
+  </body>
+</html>

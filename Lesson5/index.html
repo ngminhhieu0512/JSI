@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div id="left">
+        <div class="dropdown-container">
+          <h1 class="currency">GBP▾</h1>
+          <div class="currency-dropdown">
+            <ul>
+              <li>GBP</li>
+              <li>USD</li>
+              <li>EUR</li>
+              <li>DKK</li>
+              <li>ARS</li>
+              <li>CNY</li>
+              <li>BRL</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown-container">
+          <h1 class="language">EN▾</h1>
+          <div class="language-dropdown">
+            <ul>
+              <li>EN</li>
+              <li>FR</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown-container">
+          <h1 class="phone-number">+1 (800) 123 456 789</h1>
+        </div>
+      </div>
+      <div id="middle">
+        <div class="dropdown-container">
+          <h1 class="home">HOME▾</h1>
+          <div class="home-dropdown">
+            <ul>
+              <li>Home page 1</li>
+              <li>Home page 2</li>
+              <li>Home page 3</li>
+              <li>Home page 4</li>
+              <li>Home page 5</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown-container">
+          <h1 class="shop">SHOP▾</h1>
+          <div class="shop-dropdown">
+            <ul>
+              <h1 class="shop-dropdwon-title">SHOP LAYOUT</h1>
+              <li>Shop - Full Width</li>
+              <li>Shop - Sidebar Right</li>
+              <li>Shop - Sidebar Left</li>
+            </ul>
+            <ul>
+              <h1 class="shop-dropdwon-title">PRODUCT LAYOUT</h1>
+              <li>Thumbnail On The Right</li>
+              <li>Thumbnail On The Left</li>
+              <li>Thumbnail On The Bottom</li>
+            </ul>
+            <ul>
+              <h1 class="shop-dropdwon-title">OTHER SHOP PAGE</h1>
+              <li>Page - Collection</li>
+              <li>Page - Shopping Cart</li>
+              <li>Page - Wishlist</li>
+            </ul>
+            <ul>
+              <h1 class="shop-dropdwon-title">PRODUCT TYPES</h1>
+              <li>Simple Product</li>
+              <li>Grouped Product</li>
+              <li>Variable Product</li>
+            </ul>
+            <div class="img-cover">
+              <img
+                src="https://i.pinimg.com/564x/12/d6/80/12d680457866873e99bdded305379b77.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown-container">
+          <h1 class="pages">PAGES▾</h1>
+          <div class="pages-dropdown">
+            <ul>
+              <li>My account</li>
+              <li>Contact us</li>
+              <li>About us</li>
+              <li>Our team</li>
+              <li>Faqs</li>
+              <li>Page 404</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="dropdown-container">
+          <h1 class="web-name">GOSTO</h1>
+        </div>
+
+        <div class="dropdown-container">
+          <h1 class="blog">BLOG▾</h1>
+          <div class="blog-dropdown">
+            <ul>
+              <li>Grid no sidebar</li>
+              <li>Grid right sidebar</li>
+              <div class="sub-blog-dropdown">
+                <li>Grid left sidebar▾</li>
+                <div class="inside-sub-blog-dropdown">
+                  <ul>
+                    <li>Article no sidebar</li>
+                    <li>Article right sidebar</li>
+                    <li>Article left sidebar</li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown-container">
+          <h1 class="about-us">ABOUT</h1>
+        </div>
+
+        <div class="dropdown-container">
+          <h1 class="contact">CONTACT US</h1>
+        </div>
+      </div>
+      <div id="right">
+        <span class="login-register">Login/<br />Register</span>
+        <img
+          class="header-icon"
+          src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/344/external-search-social-media-interface-anggara-basic-outline-anggara-putra.png"
+          alt=""
+        />
+        <img
+          class="header-icon"
+          src="https://img.icons8.com/material-outlined/344/like--v1.png"
+          alt=""
+        />
+        <img
+          class="header-icon"
+          src="https://img.icons8.com/ios/344/box--v1.png"
+          alt=""
+        />
+        <img
+          class="header-icon"
+          src="https://img.icons8.com/ios-filled/344/menu--v1.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <!-- content -->
+    <div class="navigation">
+      <span class="nav">Home</span>
+      <span class="nav">/</span>
+      <span class="nav">Accessories</span>
+      <span class="nav">/</span>
+      <span class="nav nav1">Unpholstered Simple PH-1</span>
+    </div>
+
+    <div id="content-container">
+      <div class="img-container">
+        <div class="sub-img">
+          <img
+            id="subimg1" onclick="changeImage(this)"
+            src="https://i.pinimg.com/564x/12/d6/80/12d680457866873e99bdded305379b77.jpg"
+            alt=""
+          />
+          <img
+            id="subimg2" onclick="changeImage(this)"
+            src="https://i.pinimg.com/564x/53/c9/54/53c954e40424f2f00b6b9b83fae7f570.jpg"
+            alt=""
+          />
+        </div>
+        <img
+          id="product-img"
+          src="https://i.pinimg.com/564x/12/d6/80/12d680457866873e99bdded305379b77.jpg"
+          alt=""
+        />
+      </div>
+      <div class="detail">
+        <div class="title-intro">
+          <h1 class="product-title">Unpholstered Simple PH-1</h1>
+          <div class="customer-review">
+            <span class="review">⭐⭐⭐⭐⭐</span>
+            <span class="review">/</span>
+            <span class="review">No reviews</span>
+            <span class="review">/</span>
+            <span class="review">Write a review</span>
+          </div>
+          <div class="intro">
+            <h1 class="price">£53.97</h1>
+            <h2 class="freeship">Spend £166.05 to Free Shipping</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus,
+              error! Alias ipsa necessitatibus sint quasi dolores a, vero
+              similique sit nobis exercitationem eaque hic numquam asperiores
+              consequatur amet aliquam laborum?
+            </p>
+            <div class="bars">
+              <div class="barbefore"></div>
+              <div class="bar"></div>
+            </div>
+
+            <div class="order-quantity">
+              <div class="number">
+                <button class="button-quantity" onclick="decrease()">-</button>
+                <p id="quantity"></p>
+                <button class="button-quantity" onclick="increase()">+</button>
+              </div>
+              <div class="add">
+                <button class="addtocart" onclick="addToCartHB()">
+                  <h2>Add to cart</h2>
+                </button>
+              </div>
+            </div>
+            <div class="condition">
+              <input id="checkbox" type="checkbox" onclick="allowBuyNow()" /> I
+              agree with the terms and conditions
+            </div>
+            <button id="buynow">
+              <h2>Buy it now</h2>
+            </button>
+            <div class="options">
+              <h2>📦 ADD TO COMPARE</h2>
+              <h2>❤️ ADD TO WISHLIST</h2>
+            </div>
+            <div class="description">
+              <ul>
+                <li>VENDOR:</li>
+                <li>AVAILABILITY:</li>
+                <li>TAGS:</li>
+              </ul>
+              <ul>
+                <li>Gosto</li>
+                <li>Many in stock</li>
+                <li>Clements Ribeiro, Dominique Aurientis</li>
+              </ul>
+            </div>
+            <div class="share">
+              <h2>SHARE:</h2>
+              <img
+                onmousemove="showShare1()"
+                onmouseleave="hideShare1()"
+                src="https://img.icons8.com/color/344/facebook-new.png"
+                alt=""
+              />
+              <img
+                onmousemove="showShare2()"
+                onmouseleave="hideShare2()"
+                src="https://img.icons8.com/color/344/twitter--v1.png"
+                alt=""
+              />
+              <img
+                onmousemove="showShare3()"
+                onmouseleave="hideShare3()"
+                src="https://img.icons8.com/color/344/pinterest--v1.png"
+                alt=""
+              />
+
+              <div id="share1">Share On Facebook</div>
+              <div id="share2">Share On Twitter</div>
+              <div id="share3">Share On Pinterest</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-description">
+      <div class="product-description-title">
+        <h1>DESCRIPTION</h1>
+        <h1>REVIEW(0)</h1>
+      </div>
+      <div class="description-detail">
+        <div class="description-text">
+          <h1>PRODUCTS DESCRIPTION</h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt
+            nam ullam voluptatum amet dicta repellat corporis aliquam commodi
+            facere similique nemo, mollitia dignissimos nulla animi sapiente.
+            Velit quibusdam dolorum quam.
+          </p>
+          <h1>PRODUCT DETAILS</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Consequuntur tempore animi optio fuga aliquid autem facere aperiam
+            quo, excepturi nemo? Ipsa eveniet rem dolor ipsum tempore labore
+            sequi officiis eum.
+          </p>
+          <h1>PRODUCT BRAND</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+            magni magnam necessitatibus libero quis tempora. Necessitatibus
+            atque, vel in repellat dicta aspernatur praesentium hic, incidunt,
+            impedit placeat laboriosam magnam voluptate.
+          </p>
+        </div>
+        <div class="description-img">
+          <img
+            src="https://i.pinimg.com/564x/12/d6/80/12d680457866873e99bdded305379b77.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="additional-product">
+      <h1 class="top-title">TOP RELATED IN THIS WEEK</h1>
+      <h1 class="second-title">RELATED PRODUCTS</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <div class="additional-products">
+        <div>
+          <img
+            src="https://i.pinimg.com/564x/12/d6/80/12d680457866873e99bdded305379b77.jpg"
+            alt=""
+          />
+          <h1>Bellhop Portable Table Lamp</h1>
+          <h1>£46.93</h1>
+        </div>
+        <div>
+          <img
+            src="https://i.pinimg.com/564x/53/c9/54/53c954e40424f2f00b6b9b83fae7f570.jpg"
+            alt=""
+          />
+          <h1>The Round Dorm B2</h1>
+          <h1>£80.44</h1>
+        </div>
+        <div>
+          <img
+            src="https://i.pinimg.com/564x/12/d6/80/12d680457866873e99bdded305379b77.jpg"
+            alt=""
+          />
+          <h1>Unika Pendant Lamp</h1>
+          <h1>£37.71</h1>
+        </div>
+        <div>
+          <img
+            src="https://i.pinimg.com/564x/53/c9/54/53c954e40424f2f00b6b9b83fae7f570.jpg"
+            alt=""
+          />
+          <h1>Cotton Crewneck Sweater</h1>
+          <h1>£37.71</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="upper-footer">
+        <h1 class="newsletter">OUR NEWSLETTER</h1>
+        <h1 class="discount">UP TO 40% OFF ITEMS</h1>
+        <p>
+          Subscribe to the Gosto mailing list to receive updates on new
+          arrivals<br />
+          & other discount information.
+        </p>
+        <input type="email" placeholder="Your email address ..." />
+        <button class="subscribe">Subscribe</button>
+      </div>
+      <div class="line smaller"></div>
+      <div class="info">
+        <ul>
+          <li>INFORMATION</li>
+          <li>OUR STORE</li>
+          <li>OUR SERVICE</li>
+          <li>TOP PRODUCTS</li>
+        </ul>
+        <ul>
+          <li>OUR STYLES</li>
+          <li>RECRUITMENT</li>
+          <li>ABOUT US</li>
+          <li>CONTACT US</li>
+        </ul>
+        <ul>
+          <li>LOOKING FOR GOSTO?</li>
+          <li>+1 (800) 123 456 789</li>
+          <li>460 Peutestrabe, Hamburg, Germany</li>
+          <li>gosto@google.com</li>
+        </ul>
+        <ul class="longer">
+          <li>ABOUT GOSTO STORE</li>
+          <li>
+            Gosto is a premium template theme with advanced admin module. It's
+            extremely easy to use and fully responsive and retina ready
+          </li>
+          <li>
+            <img src="https://cdn.shopify.com/s/files/1/0593/9488/3760/files/icon_payment_278x24.png?v=1630400072" alt="">
+          </li>
+        </ul>
+      </div>
+      <div class="line smaller"></div>
+      <div class="social-media">
+        <p class="end">Copyright © GOSTO all rights reserved. Powered by laberthemes.
+        </p>
+        <div class="social-media-img">
+          <span>Social Media:</span>
+          <img src="https://img.icons8.com/color/344/facebook-new.png" alt="">
+          <img src="https://img.icons8.com/color/344/twitter--v1.png" alt="">
+          <img src="https://img.icons8.com/color/344/pinterest--v1.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <button onclick="topFunction()" id="to-top-button" title="Go to top">⩓</button>
+    
+    <div id="remind">
+      <div class="remind-container">
+      <div class="remind-info">
+        <img src="https://i.pinimg.com/564x/12/d6/80/12d680457866873e99bdded305379b77.jpg" alt="">
+        <div>
+          <h1>Upholstered Simple PH-1</h1>
+          <h1>⭐⭐⭐⭐⭐ No reviews</h1>
+          <h1>£54.95</h1>
+        </div>
+      </div>
+      <div class="remind-addToCart">
+          <div class="number">
+            <button class="button-quantity" onclick="decrease()">-</button>
+            <p id="quantity">01</p>
+            <button class="button-quantity" onclick="increase()">+</button>
+          </div>
+          <div class="remind-add">
+            <button class="remind-addToCart-button" onclick="addToCartHB()">
+              <h2>Add to cart</h2>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="./test.js"></script>
+  </body>
+</html>

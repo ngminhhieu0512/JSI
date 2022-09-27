@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../css/signup.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="title">Sign up</h1>
+      <form action="" id="log-in">
+        <input
+          type="text"
+          placeholder="Your email"
+          name="email"
+          id="email-input"
+          required
+        /><br />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="password-input"
+          required
+        /><br />
+        <button type="submit">Sign up</button>
+        <img
+          src="https://img.icons8.com/material-outlined/344/visible--v1.png"
+          alt=""
+          onclick="showPassword()"
+          id="show-pass-1"
+        />
+      </form>
+    </div>
+
+    <script src="../javascript/signup.js"></script>
+    <script type="module" src="../javascript/auth.js"></script>
+    <script type="module">
+      import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = this.email.value.trim();
+        const password = this.password.value.trim();
+
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            window.location.href = "../html/login.html";
+          })
+          .catch((error) => {
+            alert("Sign up failed");
+            // ..
+          });
+      });
+    </script>
+  </body>
+</html>

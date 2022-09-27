@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <ul>
+      <li>
+
+      </li>
+    </ul>
+
+
+    <script>
+        var apiUrl = "https://jsonplaceholder.typicode.com/posts";
+        // Lấy dữ liệu
+        fetch(apiUrl)
+            .then(function (response) {
+                // kiểu dữ liệu là Response
+                return response.json(); // vẫn return 1 Promise
+            })
+            .then(function (response) {
+                var html = "";
+                for (let i = 0; i < response.length; i++) {
+                    html += "<li>";
+                    html += "<h1>";
+                    html += response[i].title;
+                    html += "</h1>";
+                    html += "<p>";
+                    html += response[i].body;
+                    html += "</p>"
+                    html += "</li>"
+
+                    localStorage.setItem(response[i].id, response[i].body)
+                }
+
+                document.querySelector("ul").innerHTML = html;
+            });
+
+        // localStorage
+        // Thêm dữ liệu
+        // localStorage.setItem("keyname", "value")
+        // Lấy dữ liệu
+        // localStorage.getItem("keyname")
+        // Xóa dữ liệu
+        // localStorage.removeItem("keyname")
+        // Xóa toàn bộ dữ liệu 
+        // localStorage.clear()
+        
+        var so = 100;
+        var chu = "100";
+        var mang = [1, 2, 3];
+        var object = {
+            name: "Hieu",
+            age: "18",
+        };
+        var dung = true;
+        var sai = false;
+        console.log(dung);
+
+        var check = 100;
+        if (check > 1000) {
+            // Nếu đúng
+            console.log("Đúng")
+        }else{
+            // Nếu sai
+            console.log("Sai")
+        };
+
+    </script>
+  </body>
+</html>

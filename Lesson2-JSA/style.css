@@ -1,0 +1,255 @@
+body {
+  background-image: url(./hero.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.logo {
+  height: 100px;
+  width: 100px;
+  margin-top: 15px;
+  margin-left: 90px;
+}
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header_menu {
+  margin-right: 30px;
+  font-size: 20px;
+  color: white;
+  transition: 0.2s;
+}
+.header_menu:hover {
+  border-bottom: orange;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-style: solid;
+  transition: 0.2s;
+}
+.menu {
+  margin-top: 55px;
+  margin-right: 60px;
+}
+.page1 {
+  margin-left: 90px;
+  margin-top: 150px;
+  font-size: 50px;
+  color: white;
+}
+.buttons {
+  margin-left: 90px;
+  display: flex;
+  flex-direction: row;
+}
+.p1 {
+  margin-top: 0px;
+  margin-right: 20px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: orange;
+  background-color: orange;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+}
+.p1:hover {
+  background-color: rgb(221, 144, 2);
+  border-color: rgb(221, 144, 2);
+  transition: 0.3s;
+}
+.p11 {
+  margin-top: 0px;
+  margin-right: 20px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: orange;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: orange;
+}
+.p11:hover {
+  background-color: orange;
+  color: white;
+  transition: 0.3s;
+}
+#container2 {
+  background-color: white;
+  margin-top: 250px;
+}
+.page2 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 50px;
+}
+#features{
+  margin-top: 50px;
+}
+.add {
+  color: orange;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+.p2 {
+  font-size: 25px;
+  text-align: center;
+}
+.smallicon {
+  height: 40px;
+  width: 40px;
+}
+#features {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-bottom: 90px;
+}
+.smallicon {
+  margin-left: 0px;
+}
+.smallfeature {
+  width: 240px;
+}
+.sftp {
+  font-size: 20px;
+}
+#zoompics{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 500px;
+}
+.zoompic_wrap{
+  width: 25vw;
+  height: 250px;
+  overflow: hidden;
+}
+.zoompic{
+  width: 400px;
+  height: 290px;
+  transform: scale(1.4);
+  transition: 0.3s;
+  filter: brightness(0.8);
+}
+.zoompic:hover{
+  transform: scale(2);
+  transition: 0.3s;
+  filter: brightness(1);
+}
+.title {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 200px;
+}
+#container5 {
+  display: flex;
+  flex-direction: row;
+  margin-left: 250px;
+}
+ul {
+  list-style: none;
+}
+.type {
+  font-size: 40px;
+  margin-right: 50px;
+}
+.info {
+  font-size: 40px;
+}
+select {
+  height: 40px;
+  width: 508px;
+  margin-top: 25px;
+}
+#ho_ten {
+  height: 40px;
+  width: 500px;
+  margin-bottom: 5px;
+}
+#mail {
+  height: 40px;
+  width: 500px;
+  margin-bottom: 5px;
+}
+#message {
+  height: 40px;
+  width: 500px;
+}
+.tp {
+  margin-bottom: 20px;
+}
+:placeholder-shown{
+  font-size: 25px;
+}
+#news {
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+.label{
+  color: black;
+  font-size: 25px;
+  font-weight: 10;
+}
+.submit {
+  height: 50px;
+  width: 200px;
+  border-radius: 30px;
+  font-size: 30px;
+  border-style: none;
+  background-color: orange;
+  color: white;
+  margin: 0px 567px 90px 567px;
+}
+.submit:hover {
+  opacity: 0.8;
+  transition: 0.5s;
+}
+.description{
+  width: 300px;
+  margin-left: 50vw;
+}
+#container3{
+  position: relative;}
+.part3{
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+.download1{
+  width: 150px;
+  height: 65px;
+  position: absolute;
+  left: 50vw;
+  margin-bottom: 80px;
+}
+.download{
+  height: 70px;
+  width: 150px;
+  position: absolute;
+  left: 62vw;
+  top: 418px;
+}
+.iphone{
+  height: 54vh;
+  position: absolute;
+  left: 30vw;
+  top: 127px;
+}
+.pic_ul{
+  position: absolute;
+  top: 130px;
+  left: 46vw;
+}
+.pic_ul li{
+  margin-bottom: 50px;
+}

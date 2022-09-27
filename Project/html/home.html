@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/home.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="header-left">
+        <a href="../html/home.html">
+        <img src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/ghost.png" alt="">
+        </a>
+      </div>
+      <div class="header-center">
+        <div class="home">
+          <h1><a href="../html/home.html">Home</a></h1>
+        </div>
+        <div class="shop">
+          <h1><a href="../html/preshop.html">Shop</a></h1>
+        </div>
+        <div class="contact">
+          <h1><a href="../html/contact.html">Contact</a></h1>
+        </div>
+      </div>
+      <div class="header-right">
+        <input type="search" placeholder="Search" />
+        <div class="cart">
+          <a href="../html/cart.html">
+          <img
+            src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
+            alt=""
+          />
+          </a>
+        </div>
+        <div class="account">
+          <img
+            src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/FFFFFF/external-account-social-media-interface-anggara-glyph-anggara-putra.png"
+            alt=""
+            onclick="showAccount()"
+          />
+        </div>
+      </div>
+    </div>
+    <div id="account">
+      <a href="../html/cart.html"><h2>Your cart</h2></a>
+      <a href="../html/login.html"><h2>Log in</h2></a>
+      <a href="../html/signup.html"><h2>Create a new account</h2></a>
+      <h2 id="sign-out" onclick="signOut()">Sign out</h2>
+    </div>
+    <div id="verify">
+      <h1>
+        Please verify your account via email<br/>
+        ( Check the Spam folder )<br>
+        Then reload this webpage
+      </h1>
+    </div>
+
+    <!-- Content -->
+    <div id="container-home">
+    <div class="big-title">
+      <h1>HAPPY SPOOKY</h1>
+      <h1>HALLOWEEN 🎃👻</h1>
+    </div>
+    
+    <div class="party-intro">
+      <h3>JOIN OUR PARTY</h3>
+      <h4>OCTOBER 31st, 2022</h3>
+      <h5>Check the description below</h5>
+    </div>
+    </div>
+
+    <a href="../html/ticket.html"><button id="buy-now-btn">BUY YOUR TICKETS NOW</button></a>
+
+    <section id="party-info">
+      <h1 class="party-info-title title-form">🦇 OUR PARTY 🦇</h1>
+      <div class="party-info-detail">
+      <div class="party-info-detail-img">
+        <img class="ghost" src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/60/FAB005/external-ghost-halloween-vitaliy-gorbachev-fill-vitaly-gorbachev.png" alt="">
+        <img class="cauldron" src="https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/344/external-cauldron-magic-and-fairy-tale-icongeek26-linear-colour-icongeek26.png" alt="">
+        <img class="bat" src="https://img.icons8.com/plasticine/344/bat.png" alt="">
+      </div>
+      <a href="../html/ticket.html"><button class="buy-now-btn-2">BUY YOUR TICKETS NOW</button></a>
+      <h1 class="main-info">MAIN INFORMATION</h1>
+      <div class="party-info-detail-text">
+        <div class="">
+          <h1>Starts at 18:00<br> October 31st, 2022</h1>
+          <h1>123 Abc Street</h1>
+          <h1>No age limit</h1>
+          <img class="clock-icon" src="https://img.icons8.com/ios-filled/50/FFFFFF/clock--v1.png" alt="">
+          <img class="location-icon" src="https://img.icons8.com/ios-filled/50/FFFFFF/location-update.png" alt="">
+          <img class="age-icon" src="https://img.icons8.com/external-smashingstocks-glyph-smashing-stocks/66/FFFFFF/external-person-web-smashingstocks-glyph-smashing-stocks.png" alt="">
+        </div>
+      </div>
+      </div>
+    </section>
+    <section id="activity">
+      <h1 class="activity-title title-form">🎃 WHAT YOU CAN DO HERE 🎃</h1>
+      <div id="activity-container">
+        <div class="activity-row">
+          <div id="show-detail-1" class="activity-info">
+            <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/40C057/external-film-multimedia-kiranshastry-solid-kiranshastry.png" alt="">
+            <h1>MOVIES</h1>
+            <p>Enjoy the scariest yet funny and interesting Halloween movies</p>
+          </div>
+          <div id="show-detail-2" class="activity-info">
+            <img src="https://img.icons8.com/color/48/000000/cute-pumpkin.png" alt="">
+            <h1>CARVE</h1>
+            <p>Take part in a Pumpkin Carving competition for a chance to win valuable prizes</p>
+          </div>
+          <div id="show-detail-3" class="activity-info">
+            <img src="https://img.icons8.com/ios-filled/100/C850F2/dining-room.png" alt="">
+            <h1>DINING</h1>
+            <p>Fill up yourself with delicious food in the Dining Section</p>
+          </div>
+        </div>
+        <div class="activity-row">
+          <div id="show-detail-4" class="activity-info">
+            <img src="https://img.icons8.com/windows/32/FAB005/itunes-note.png" alt="">
+            <h1>DANCE</h1>
+            <p>Paint the dance floor with your feet and cool dance moves at the dance party and enjoy all you can</p>
+          </div>
+          <div id="show-detail-5" class="activity-info">
+            <img src="https://img.icons8.com/external-linector-fill-linector/64/228BE6/external-mask-horror-decoration-linector-fill-linector.png" alt="">
+            <h1>ART</h1>
+            <p>Get creative and design your very own mask</p>
+          </div>
+          <div id="show-detail-6" class="activity-info">
+            <img src="https://img.icons8.com/material/96/FFFFFF/questions--v2.png" alt="">
+            <h1>QUIZ</h1>
+            <p>Test your knowledge about Halloween during Quiz Time</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="movies" class="activity-detail">
+        <h1 class="h1-form">MOVIES TIME</h1>
+        <h2 class="h2-form">Location: A BUILDING</h2>
+        <h2 class="h2-form">Time: Starting at 6pm</h2>  
+        <h2 class="h2-form">Movies to be shown: Frankenstein, Witch, ...</h2>
+        <h2 class="h2-form">Snacks: Popcorn and drinks will be provided</h2>
+        <img src="https://img.icons8.com/color/400/000000/movie-theater.png" alt="">
+        <button id="hide-detail-1" class="close-btn">X</button>
+      </div>
+
+      <div id="pumpkin-carving" class="activity-detail">
+        <h1 class="h1-form">PUMPKIN CARVING COMPETITION</h1>
+        <h2 class="h2-form">Location: B BUILDING</h2>
+        <h2 class="h2-form">Time: Starting at 4pm</h2>  
+        <h2 class="h2-form">Tools: Available</h2>
+        <h2 class="h2-form">Prize: The best 3 will receive wonderful prizes</h2>
+        <img src="https://img.icons8.com/color/350/000000/jack-o-lantern--v1.png" alt="">
+        <button id="hide-detail-2" class="close-btn">X</button>
+      </div>
+
+      <div id="dining" class="activity-detail">
+        <h1 class="h1-form">HALLOWEEN FOOD SECTION</h1>
+        <h2 class="h2-form">Location: C RESTAURANT</h2>
+        <h2 class="h2-form">Time: Serving lunch and dinner</h2>  
+        <h2 class="h2-form">Vegan options available</h2>
+        <img src="https://img.icons8.com/fluency/300/000000/restaurant-.png" alt="">
+        <button id="hide-detail-3" class="close-btn">X</button>
+      </div> 
+  
+      <div id="dance" class="activity-detail">
+        <h1 class="h1-form">DANCE ROOM</h1>
+        <h2 class="h2-form">Location: C BUILDING</h2>
+        <h2 class="h2-form">Time: Starting at 6pm</h2>  
+        <h2 class="h2-form">Wear your Halloween costumes if you can</h2>
+        <img src="https://img.icons8.com/external-wanicon-lineal-wanicon/350/000000/external-dance-birthday-and-party-wanicon-lineal-wanicon.png" alt="">
+        <button id="hide-detail-4" class="close-btn">X</button>
+      </div>
+
+      <div id="art" class="activity-detail">
+        <h1 class="h1-form">MASK DECORATING</h1>
+        <h2 class="h2-form">Location: D BUILDING</h2>
+        <h2 class="h2-form">Time: Starting at 6pm</h2>  
+        <h2 class="h2-form">Tools: Available</h2>
+        <h2 class="h2-form">Prize: The best 3 will receive wonderful prizes</h2>
+        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/350/000000/external-art-online-education-flaticons-lineal-color-flat-icons-2.png" alt="">
+        <button id="hide-detail-5" class="close-btn">X</button>
+      </div>
+
+      <div id="quiz" class="activity-detail">
+        <h1 class="h1-form">QUIZ SHOW</h1>
+        <h2 class="h2-form">Location: E BUILDING</h2>
+        <h2 class="h2-form">Time: Starting at 8pm</h2>  
+        <h2 class="h2-form">Winner with the highest score will receive<br> wonderful prizes</h2>
+        <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/350/000000/external-quiz-online-learning-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png" alt="">
+        <button id="hide-detail-6" class="close-btn">X</button>
+      </div>
+    </section>
+    <div id="total-quantity"></div>
+
+    <!-- Footer -->
+    <section id="footer">
+      <h1>About us</h1>
+      <h1>Contact us</h1>
+      <div class="social-media">
+        <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="">
+        <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="">
+        <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="">
+      </div>
+      <a href="../html/ticket.html"><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a>
+    </section>
+
+    <script src="../javascript/home.js"></script>
+    <script type="module" src="../javascript/auth.js"></script>
+    <script type="module">
+      import { onAuthStateChanged, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+
+      onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+        if (auth.currentUser.emailVerified === false) {
+          document.getElementById("verify").style.display = "block";
+          document.getElementById("header").style.display = "none";
+          document.getElementById("buy-now-btn").style.display = "none";
+          document.getElementById("container-home").style.display = "none";
+          document.getElementById("party-info").style.display = "none";
+          document.getElementById("activity").style.display = "none";
+          document.getElementById("footer").style.display = "none";
+          document.getElementById("total-quantity").style.display = "none";
+
+          sendEmailVerification(auth.currentUser)
+          .then(() => {
+            // Email verification sent!
+            // ...
+          });
+        }
+        
+      } else {
+        // window.location.href = "../html/login.html";
+      }
+      })
+    </script>
+  </body>
+</html>

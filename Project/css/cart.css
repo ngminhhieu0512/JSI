@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  animation: fade-in 0.5s;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+body {
+  background-image: url(./background1.jpg.png);
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Header */
+#header {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0px;
+  margin: 0 5%;
+}
+#header h1 {
+  color: white;
+}
+.header-left,
+.header-center,
+.header-right {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.header-left img {
+  height: 80px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+.header-center div {
+  margin: 0 auto;
+  transition: 0.1s;
+}
+.header-center div:hover {
+  border-bottom: 2px solid white;
+  transition: 0.1s;
+}
+.header-right input {
+  height: 40px;
+  margin-left: 120px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 10px;
+}
+.header-right img {
+  height: 32px;
+  cursor: pointer;
+}
+.header-right div {
+  margin-right: 20px;
+}
+#account {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  border: 1px solid white;
+  background-color: black;
+  display: none;
+}
+#account h2 {
+  font-size: 10px;
+  text-align: center;
+  color: white;
+  margin: 10px auto;
+  cursor: pointer;
+  width: fit-content;
+}
+#account h2:hover {
+  border-bottom: 1px solid white;
+}
+/* Content */
+#remind {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+}
+#table {
+  width: 100vw;
+  font-size: 30px;
+  color: white;
+}
+#table th,
+#table td {
+  border: 2px solid white;
+  text-align: center;
+  padding: 10px;
+}
+#total {
+  margin-top: 40px;
+  color: white;
+  float: right;
+  margin-right: 230px;
+  font-size: 40px;
+  border-bottom: 2px solid white;
+}
+#checkout {
+  display: block;
+  color: yellow;
+  margin-top: 40px;
+  float: right;
+  margin-right: 230px;
+  font-size: 40px;
+}
+#table button {
+  height: 30px;
+  width: 100px;
+  background-color: red;
+  color: white;
+  border: none;
+}
+#table button:hover {
+  filter: brightness(0.8);
+  cursor: pointer;
+}
+/* Footer */
+#footer {
+  margin-top: 90vh;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+#footer h1 {
+  color: white;
+}
+.buy-now-btn-3 {
+  font-size: 16px;
+  padding: 30px;
+  border-radius: 5px;
+  border: none;
+  animation-name: change-color;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+}
+@keyframes change-color {
+  0% {
+    background-color: orangered;
+  }
+  50% {
+    background-color: purple;
+    color: white;
+  }
+  100% {
+    background-color: orangered;
+  }
+}

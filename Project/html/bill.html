@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your bill</title>
+    <link rel="stylesheet" href="../css/bill.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <div class="header-left">
+          <a href="../html/home.html">
+          <img src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/ghost.png" alt="">
+          </a>
+        </div>
+        <div class="header-center">
+          <div class="home">
+            <h1><a href="../html/home.html">Home</a></h1>
+          </div>
+          <div class="shop">
+            <h1><a href="../html/preshop.html">Shop</a></h1>
+          </div>
+          <div class="contact">
+            <h1><a href="../html/contact.html">Contact</a></h1>
+        </div>
+        </div>
+        <div class="header-right">
+          <input type="search" placeholder="Search" />
+          <div class="cart">
+            <a href="../html/cart.html">
+            <img
+              src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
+              alt=""
+            />
+            </a>
+          </div>
+          <div class="account">
+            <img
+              src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/FFFFFF/external-account-social-media-interface-anggara-glyph-anggara-putra.png"
+              alt=""
+              onclick="showAccount()"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="account">
+        <a href="../html/cart.html"><h2>Your cart</h2></a>
+        <a href="../html/login.html"><h2>Log in</h2></a>
+        <a href="../html/signup.html"><h2>Create a new account</h2></a>
+        <h2 id="sign-out">Sign out</h2>
+      </div>
+
+      <!-- content -->
+      <h1 class="title">Your bill</h1>
+      <div id="container">
+      <div class="customer-info">
+        <h2 id="name"></h2>
+        <h2 id="phone"></h2>
+        <h2 id="address"></h2>
+      </div>
+      <div class="products">
+        <table id="table">
+  
+        </table>
+        <div class="total-div">
+        <h2 class="total">Total:</h2>
+        <h2 id="total-price"></h2>
+        </div>
+  
+      </div>
+      </div>
+  
+      <button onclick="deleleStorage()" class="confirm-button">Confirm</button>
+
+      <!-- Footer -->
+    <section id="footer">
+        <h1>About us</h1>
+        <h1>Contact us</h1>
+        <div class="social-media">
+          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="">
+          <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="">
+          <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="">
+        </div>
+        <a href="../html/ticket.html"><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a>
+      </section>
+
+      <script src="../javascript/bill.js"></script>
+      <script type="module" src="../javascript/auth.js"></script>
+</body>
+</html>
