@@ -25,6 +25,7 @@ a {
   display: flex;
   flex-direction: row;
   padding: 10px 0px;
+  height: 100px;
   margin: 0 5%;
 }
 #header h1 {
@@ -48,13 +49,18 @@ a {
   display: flex;
   align-items: center;
 }
-.header-center div {
+.home, .shop, .contact {
   margin: 0 auto;
   transition: 0.1s;
 }
-.header-center div:hover {
+.home:hover h1, .shop:hover h1, .contact:hover h1 {
   border-bottom: 2px solid white;
   transition: 0.1s;
+}
+.shop {
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
 .header-right input {
   height: 40px;
@@ -90,6 +96,68 @@ a {
 }
 #account h2:hover {
   border-bottom: 1px solid white;
+}
+.shop:hover .shop-dropdown {
+  display: flex;
+  transition: 0.5s;
+}
+.shop-dropdown {
+  position: absolute;
+  top: 100px;
+  gap: 50px;
+  left: 0;
+  right: 0;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  justify-content: center;
+  display: none;
+  flex-direction: row;
+  width: 60vw;
+  background-color: wheat;
+  transition: 0.5s;
+}
+.shop-dropdown h2{
+  position: absolute;
+}
+.shop-dropdown ul li{
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.corner-1 {
+  top: -20px;
+  left: -10px;
+}
+.corner-2 {
+  top: -20px;
+  right: -10px;
+}
+.corner-3 {
+  top: 90px;
+  left: -10px;
+}
+.corner-4 {
+  top: 90px;
+  right: -10px;
+}
+#search-list {
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: absolute;
+  top: 70px;
+  right: 105px;
+  width: 200px;
+  z-index: 99;
+  display: none;
+}
+#search-list h2 {
+  margin: 10px 0;
+  color: black;
+  font-size: 18px;
+  display: none;
 }
 /* Content */
 .big-title {
@@ -153,11 +221,25 @@ ul li {
   overflow: hidden;
   height: 50vh;
 }
-.product img {
+.product-img-cover button {
+  border: 5px double black;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 16vw;
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.product-img {
   width: 22vw;
   height: 50vh;
 }
-.product img:hover {
+.product-img:hover {
   transform: scale(1.5);
   transition: 0.5s;
   cursor: pointer;
@@ -179,6 +261,25 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* Search */
+#search-list {
+  position: absolute;
+  display: none;
+  width: 158px;
+  border: 2px solid black;
+  background-color: white;
+  right: 148px;
+  top: 72px;
+  padding: 10px;
+  z-index: 99;
+  border-radius: 10px;
+}
+#search-list-product {
+  display: none;
+  color: black;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 /* Footer */

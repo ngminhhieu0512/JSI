@@ -6,16 +6,10 @@
     "Lucida Sans", Arial, sans-serif;
   animation: fade-in 0.5s;
 }
-/* @keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: rotateX(-10deg);
-  }
-  to {
-    opacity: 1;
-    transform: rotateX(0);
-  }
-} */
+@keyframes fade-in {
+  from {opacity: 0; transform: rotateX(-10deg);}
+  to {opacity: 1; transform: rotateX(0);}
+}
 body {
   background-image: url(./background1.jpg.png);
   background-size: 100vw 100vh;
@@ -31,6 +25,7 @@ a {
   display: flex;
   flex-direction: row;
   padding: 10px 0px;
+  height: 100px;
   margin: 0 5%;
 }
 #header h1 {
@@ -54,13 +49,18 @@ a {
   display: flex;
   align-items: center;
 }
-.header-center div {
+.home, .shop, .contact {
   margin: 0 auto;
   transition: 0.1s;
 }
-.header-center div:hover {
+.home:hover h1, .shop:hover h1, .contact:hover h1 {
   border-bottom: 2px solid white;
   transition: 0.1s;
+}
+.shop {
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
 .header-right input {
   height: 40px;
@@ -96,6 +96,69 @@ a {
 }
 #account h2:hover {
   border-bottom: 1px solid white;
+}
+.shop:hover .shop-dropdown {
+  display: flex;
+  transition: 0.5s;
+}
+.shop-dropdown {
+  position: absolute;
+  top: 100px;
+  gap: 50px;
+  left: 0;
+  right: 0;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  justify-content: center;
+  display: none;
+  flex-direction: row;
+  width: 60vw;
+  background-color: wheat;
+  transition: 0.5s;
+}
+.shop-dropdown h2{
+  position: absolute;
+}
+.shop-dropdown ul li{
+  list-style: none;
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.corner-1 {
+  top: -20px;
+  left: -10px;
+}
+.corner-2 {
+  top: -20px;
+  right: -10px;
+}
+.corner-3 {
+  top: 90px;
+  left: -10px;
+}
+.corner-4 {
+  top: 90px;
+  right: -10px;
+}
+#search-list {
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: absolute;
+  top: 70px;
+  right: 105px;
+  width: 200px;
+  z-index: 99;
+  display: none;
+}
+#search-list h2 {
+  color: black;
+  margin: 10px 0;
+  font-size: 18px;
+  display: none;
 }
 /* Content */
 #cover {
