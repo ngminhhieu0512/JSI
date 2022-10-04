@@ -1,3 +1,5 @@
+var activityContainer = document.getElementById("activity-container");
+
 // Movies
 var movies = document.getElementById("movies");
 var show = document.getElementById("show-detail-1");
@@ -5,9 +7,11 @@ var hide = document.getElementById("hide-detail-1");
 
 show.addEventListener("click", () => {
   movies.style.display = "block";
+  activityContainer.style.display = "none";
 });
 hide.addEventListener("click", () => {
   movies.style.display = "none";
+  activityContainer.style.display = "block";
 });
 
 // Carve
@@ -17,9 +21,11 @@ var hide2 = document.getElementById("hide-detail-2");
 
 show2.addEventListener("click", () => {
   pumpkinCarve.style.display = "block";
+  activityContainer.style.display = "none";
 });
 hide2.addEventListener("click", () => {
   pumpkinCarve.style.display = "none";
+  activityContainer.style.display = "block";
 });
 
 // Dining
@@ -29,9 +35,11 @@ var hide3 = document.getElementById("hide-detail-3");
 
 show3.addEventListener("click", () => {
   dining.style.display = "block";
+  activityContainer.style.display = "none";
 });
 hide3.addEventListener("click", () => {
   dining.style.display = "none";
+  activityContainer.style.display = "block";
 });
 
 // Dance
@@ -41,9 +49,11 @@ var hide4 = document.getElementById("hide-detail-4");
 
 show4.addEventListener("click", () => {
   dance.style.display = "block";
+  activityContainer.style.display = "none";
 });
 hide4.addEventListener("click", () => {
   dance.style.display = "none";
+  activityContainer.style.display = "block";
 });
 
 // Art
@@ -53,9 +63,11 @@ var hide5 = document.getElementById("hide-detail-5");
 
 show5.addEventListener("click", () => {
   art.style.display = "block";
+  activityContainer.style.display = "none";
 });
 hide5.addEventListener("click", () => {
   art.style.display = "none";
+  activityContainer.style.display = "block";
 });
 
 // Quiz
@@ -65,9 +77,11 @@ var hide6 = document.getElementById("hide-detail-6");
 
 show6.addEventListener("click", () => {
   quiz.style.display = "block";
+  activityContainer.style.display = "none";
 });
 hide6.addEventListener("click", () => {
   quiz.style.display = "none";
+  activityContainer.style.display = "block";
 });
 
 var listProduct = [];

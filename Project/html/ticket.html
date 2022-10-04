@@ -48,9 +48,11 @@
           </div>
         </div>
         <div class="header-right">
+          <div id="search-container">
           <input type="search" placeholder="Search - Products" id="search-input"/>
-        <div id="search-list">
-        </div>
+          <div id="search-list">
+          </div>
+          </div>
           <div class="cart">
             <a href="../html/cart.html">
             <img
@@ -58,6 +60,7 @@
               alt=""
             />
             </a>
+            <h2 id="total-quantity"></h2>
           </div>
           <div class="account">
             <img
@@ -76,7 +79,7 @@
       </div>
 
       <!-- content -->
-      <h1 class="title">🎃 PURCHASE TICKET FOR THE PARTY 🎃</h1>
+      <h1 id="title">🎃 PURCHASE TICKET FOR THE PARTY 🎃</h1>
       <div id="container">
         <div class="option single">
             <h1>Single Option</h1>
@@ -109,15 +112,13 @@
         <a href="../html/login.html"><h2>Log in here</h2></a>
       </div>
 
-      <div class="order-quantity">
+      <div id="order-quantity">
         <button id="decrease" onclick="decrease()">-</button>
         <div id="quantity-number"></div>
         <button id="increase" onclick="increase()">+</button>
         <h2 id="total"></h2>
       </div>
       <button class="addtocart" id="add-product" onclick="addToCart()"><h2>Add to cart</h2></button>
-
-      <div id="total-quantity"></div>
 
       <!-- Footer -->
     <section id="footer">
@@ -140,8 +141,11 @@
         if (user) {
           console.log(user);
         } else {
+          document.getElementById("add-product").style.display = "none";
+          document.getElementById("title").style.display = "none";
+          document.getElementById("order-quantity").style.display = "none";
           document.getElementById("alert").style.display = "block";
-
+          document.getElementById("container").style.marginTop = "160px";
        }
       });
       </script>

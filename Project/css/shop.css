@@ -19,7 +19,12 @@ a {
   text-decoration: none;
   color: white;
 }
-
+#verify {
+  margin-top: 20vh;
+  color: white;
+  text-align: center;
+  display: none;
+}
 /* Header */
 #header {
   display: flex;
@@ -65,7 +70,7 @@ a {
 .header-right input {
   height: 40px;
   margin-left: 120px;
-  margin-right: 20px;
+  margin-right: 8px;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -77,6 +82,29 @@ a {
 }
 .header-right div {
   margin-right: 20px;
+}
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100px;
+  width: 50px;
+}
+/* Total quantity */
+#total-quantity {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  margin-bottom: 30px;
+  margin-right: -5px;
+  z-index: 99;
+  color: white;
+  font-size: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #account {
   position: absolute;
@@ -115,11 +143,13 @@ a {
   width: 60vw;
   background-color: wheat;
   transition: 0.5s;
+  z-index: 99;
 }
 .shop-dropdown h2{
   position: absolute;
 }
 .shop-dropdown ul li{
+  list-style: none;
   color: black;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -141,14 +171,19 @@ a {
   top: 90px;
   right: -10px;
 }
+#search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 #search-list {
   background-color: white;
   padding: 10px;
   border: 2px solid black;
   border-radius: 10px;
   position: absolute;
-  top: 70px;
-  right: 105px;
+  margin-top: 40px;
+  margin-left: 100px;
   width: 200px;
   z-index: 99;
   display: none;
@@ -240,48 +275,13 @@ ul li {
   height: 50vh;
 }
 .product-img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: 0.5s;
   cursor: pointer;
 }
 .product-name {
   cursor: pointer;
 }
-/* Total quantity */
-#total-quantity {
-  height: 15px;
-  width: 15px;
-  position: absolute;
-  top: 30px;
-  right: 85px;
-  color: white;
-  font-size: 10px;
-  background-color: red;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* Search */
-#search-list {
-  position: absolute;
-  display: none;
-  width: 158px;
-  border: 2px solid black;
-  background-color: white;
-  right: 148px;
-  top: 72px;
-  padding: 10px;
-  z-index: 99;
-  border-radius: 10px;
-}
-#search-list-product {
-  display: none;
-  color: black;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
 /* Footer */
 #footer {
   margin-top: 250vh;

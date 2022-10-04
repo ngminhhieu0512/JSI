@@ -65,7 +65,7 @@ a {
 .header-right input {
   height: 40px;
   margin-left: 120px;
-  margin-right: 20px;
+  margin-right: 8px;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -77,6 +77,29 @@ a {
 }
 .header-right div {
   margin-right: 20px;
+}
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100px;
+  width: 50px;
+}
+/* Total quantity */
+#total-quantity {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  margin-bottom: 30px;
+  margin-right: -5px;
+  z-index: 99;
+  color: white;
+  font-size: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #account {
   position: absolute;
@@ -143,14 +166,19 @@ a {
   top: 90px;
   right: -10px;
 }
+#search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 #search-list {
   background-color: white;
   padding: 10px;
   border: 2px solid black;
   border-radius: 10px;
   position: absolute;
-  top: 70px;
-  right: 105px;
+  margin-top: 40px;
+  margin-left: 100px;
   width: 200px;
   z-index: 99;
   display: none;
@@ -372,7 +400,10 @@ a {
   cursor: pointer;
 }
 #activity {
+  display: flex;
+  flex-direction: column;
   margin-top: 40px;
+  height: 120vh;
   animation: color-border-2 2s;
   animation-iteration-count: infinite;
   border-radius: 20px;
@@ -429,13 +460,14 @@ a {
 }
 .activity-detail {
   position: absolute;
-  top: 264vh;
-  right: 7vw;
-  left: 7vw;
+  width: 80vw;
   height: 70vh;
+  margin: 260px 10vw;
+  transition: 1s;
 }
 .close-btn {
   background-color: transparent;
+  z-index: 99;
   height: 40px;
   width: 40px;
   position: absolute;
@@ -466,7 +498,7 @@ a {
   border-radius: 20px;
   background-color: aqua;
   display: none;
-  transition: 1s;
+  transition-duration: 1s;
 }
 #movies img {
   position: absolute;
@@ -532,21 +564,6 @@ a {
   position: absolute;
   top: 60px;
   right: 50px;
-}
-/* Total quantity */
-#total-quantity {
-  height: 15px;
-  width: 15px;
-  position: absolute;
-  top: 30px;
-  right: 85px;
-  color: white;
-  font-size: 10px;
-  background-color: red;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Footer */

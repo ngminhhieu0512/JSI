@@ -34,14 +34,10 @@ set(ref(database, `cart/user${userID}`), [
     id: 0,
     quantity: 100,
   },
-  {
-    id: 10,
-    quantity: 1,
-  },
 ]);
 
 var signOutBtn = document.getElementById("sign-out");
-signOutBtn.onclick = function () {
+signOutBtn.addEventListener("click", () => {
   signOut(auth)
     .then(() => {
       window.location.href = "../html/login.html";
@@ -49,4 +45,4 @@ signOutBtn.onclick = function () {
     .catch((error) => {
       // An error happened.
     });
-};
+});

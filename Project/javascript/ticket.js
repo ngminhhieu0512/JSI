@@ -1,5 +1,5 @@
 var quantity = 1;
-var famPrice;
+var famPrice = 50;
 if (quantity == "1") {
   document.getElementById("total").innerHTML = "50.000 VND";
 }

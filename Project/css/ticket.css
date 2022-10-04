@@ -19,7 +19,12 @@ a {
   text-decoration: none;
   color: white;
 }
-
+#verify {
+  margin-top: 20vh;
+  color: white;
+  text-align: center;
+  display: none;
+}
 /* Header */
 #header {
   display: flex;
@@ -65,7 +70,7 @@ a {
 .header-right input {
   height: 40px;
   margin-left: 120px;
-  margin-right: 20px;
+  margin-right: 8px;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -77,6 +82,29 @@ a {
 }
 .header-right div {
   margin-right: 20px;
+}
+.cart {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100px;
+  width: 50px;
+}
+/* Total quantity */
+#total-quantity {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  margin-bottom: 30px;
+  margin-right: -5px;
+  z-index: 99;
+  color: white;
+  font-size: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #account {
   position: absolute;
@@ -115,6 +143,7 @@ a {
   width: 60vw;
   background-color: wheat;
   transition: 0.5s;
+  z-index: 99;
 }
 .shop-dropdown h2{
   position: absolute;
@@ -142,14 +171,19 @@ a {
   top: 90px;
   right: -10px;
 }
+#search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 #search-list {
   background-color: white;
   padding: 10px;
   border: 2px solid black;
   border-radius: 10px;
   position: absolute;
-  top: 70px;
-  right: 105px;
+  margin-top: 40px;
+  margin-left: 100px;
   width: 200px;
   z-index: 99;
   display: none;
@@ -161,7 +195,7 @@ a {
   display: none;
 }
 /* Content */
-.title {
+#title {
   color: white;
   margin: 40px;
   text-align: center;
@@ -242,12 +276,12 @@ a {
 .price-detail {
   margin-left: 10px;
 }
-.order-quantity {
+#order-quantity {
   margin: 80px 40px 40px 35vw;
   display: flex;
   flex-direction: row;
 }
-.order-quantity div {
+#order-quantity div {
   border: 2px solid white;
 }
 #quantity-number {
@@ -293,7 +327,7 @@ button h2 {
 #alert {
   display: none;
   position: absolute;
-  top: 118vh;
+  top: 120px;
   right: 0;
   left: 0;
   height: 100px;
@@ -308,21 +342,6 @@ button h2 {
 }
 #alert h2:hover {
   color: aquamarine;
-}
-/* Total quantity */
-#total-quantity {
-  height: 15px;
-  width: 15px;
-  position: absolute;
-  top: 30px;
-  right: 85px;
-  color: white;
-  font-size: 10px;
-  background-color: red;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 /* Footer */
 #footer {
