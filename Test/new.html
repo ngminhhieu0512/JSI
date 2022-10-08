@@ -7,31 +7,33 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 id="a" class="b">Hello</h1>
     <script>
-        var word = "abc";
-        var product = [
-            {
-                name: "abc",
-                age: "12",
-            },
-            {
-                name: "def", 
-                age: "11",
-            }
-        ];
-        for (let i = 0; i < product.length; i++) {
-            if (product[i].includes(word)) {
-                product.splice(i, 1);
-                var newProduct = {
-                    name: "abc",
-                    age: "15"
-                }
-                product.push(newProduct);
+        // var word = "abc";
+        // var product = [
+        //     {
+        //         name: "abc",
+        //         age: "12",
+        //     },
+        //     {
+        //         name: "def", 
+        //         age: "11",
+        //     }
+        // ];
+        // for (let i = 0; i < product.length; i++) {
+        //     if (product[i].includes(word)) {
+        //         product.splice(i, 1);
+        //         var newProduct = {
+        //             name: "abc",
+        //             age: "15"
+        //         }
+        //         product.push(newProduct);
                 
-            }
+        //     }
             
-        }
-        console.log(product)
+        // }
+        // console.log(product)
+        console.log(document.getElementById("a").className)
     </script>
 </body>
 </html>

@@ -27,18 +27,32 @@
           <div class="shop-dropdown">
             <ul>
               <a href="../html/detailproduct.html?id=0"><li>Witch's hat</li></a>
-              <a href="../html/detailproduct.html?id=1"><li>Witch's cape</li></a>
-              <a href="../html/detailproduct.html?id=2"><li>Witch's broom</li></a>
+              <a href="../html/detailproduct.html?id=1"
+                ><li>Witch's cape</li></a
+              >
+              <a href="../html/detailproduct.html?id=2"
+                ><li>Witch's broom</li></a
+              >
             </ul>
             <ul>
-              <a href="../html/detailproduct.html?id=3"><li>Jack-o'-lantern</li></a>
-              <a href="../html/detailproduct.html?id=4"><li>Ghost light bulb</li></a>
+              <a href="../html/detailproduct.html?id=3"
+                ><li>Jack-o'-lantern</li></a
+              >
+              <a href="../html/detailproduct.html?id=4"
+                ><li>Ghost light bulb</li></a
+              >
               <a href="../html/detailproduct.html?id=5"><li>Wall clock</li></a>
             </ul>
             <ul>
-              <a href="../html/detailproduct.html?id=6"><li>Stuffed toys</li></a>
-              <a href="../html/detailproduct.html?id=7"><li>Candy bucket</li></a>
-              <a href="../html/detailproduct.html?id=8"><li>Message card</li></a>
+              <a href="../html/detailproduct.html?id=6"
+                ><li>Stuffed toys</li></a
+              >
+              <a href="../html/detailproduct.html?id=7"
+                ><li>Candy bucket</li></a
+              >
+              <a href="../html/detailproduct.html?id=8"
+                ><li>Message card</li></a
+              >
             </ul>
             <h2 class="corner-1">🎃</h2>
             <h2 class="corner-2">🎃</h2>
@@ -50,19 +64,22 @@
           <h1><a href="../html/contact.html">Contact</a></h1>
         </div>
       </div>
-      
+
       <div class="header-right">
         <div id="search-container">
-        <input type="search" placeholder="Search - Products" id="search-input"/>
-        <div id="search-list">
-        </div>
+          <input
+            type="search"
+            placeholder="Search - Products"
+            id="search-input"
+          />
+          <div id="search-list"></div>
         </div>
         <div class="cart">
           <a href="../html/cart.html">
-          <img
-            src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
-            alt=""
-          />
+            <img
+              src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
+              alt=""
+            />
           </a>
           <h2 id="total-quantity"></h2>
         </div>
@@ -91,26 +108,29 @@
 
     <!-- Content -->
     <h1 class="big-title">👻 WELCOME TO OUR SHOP 👻</h1>
-      <div id="container-categories">
-        <h1>Categories</h1>
-        <div><span id="costume">Costume</span></div>
-        <div><span id="decoration">Decoration</span></div>
-        <div><span id="toy">Toy</span></div>
-        <div><span id="show-all">Show all</span></div>
-      </div>
-      <div id="container-product">
-        <ul id="big-row-costume" style="display: flex; gap: 20px; margin-bottom: 20px">
+    <div id="container-categories">
+      <h1>Categories</h1>
+      <div><span id="costume">Costume</span></div>
+      <div><span id="decoration">Decoration</span></div>
+      <div><span id="toy">Toy</span></div>
+      <div><span id="show-all">Show all</span></div>
+    </div>
+    <div id="container-product">
+      <ul
+        id="big-row-costume"
+        style="display: flex; gap: 20px; margin-bottom: 20px"
+      ></ul>
 
-        </ul>
+      <ul
+        id="big-row-decoration"
+        style="display: flex; gap: 20px; margin-bottom: 20px"
+      ></ul>
 
-        <ul id="big-row-decoration" style="display: flex; gap: 20px; margin-bottom: 20px">
-
-        </ul>
-
-        <ul id="big-row-toy" style="display: flex; gap: 20px; margin-bottom: 20px">
-
-          </ul>
-        </div>
+      <ul
+        id="big-row-toy"
+        style="display: flex; gap: 20px; margin-bottom: 20px"
+      ></ul>
+    </div>
 
     <!-- Footer -->
     <section id="footer">
@@ -130,10 +150,99 @@
           alt=""
         />
       </div>
-      <a href="../html/ticket.html"><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a>
+      <a href="../html/ticket.html"
+        ><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a
+      >
     </section>
 
     <script src="../javascript/shop.js"></script>
     <script type="module" src="../javascript/auth.js"></script>
+    <script type="module">
+      import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+      var listProductRD = [];
+      document.getElementById("add-product-instant").onclick = function (e) {
+      //   const userID = auth.currentUser.uid;
+      //   const database = getDatabase();
+      //   const dbRef = ref(database);
+        var button = e.target;
+        console.log(button.clasaName);
+      //   button.disabled = true;
+      //   button.textContent = "...";
+      //   button.style.filter = "brightness(0.7)";
+
+      //   var productRD = {
+      //     title: button.className,
+      //     number: 1,
+      //     money: 10,
+      //   };
+
+      //   get(child(dbRef, `cart/${userID}`))
+      //     .then((snapshot) => {
+      //       if (snapshot.exists()) {
+      //         var dataFromRD = snapshot.val();
+      //         var findDuplicatedItem = dataFromRD.filter(
+      //           (product) => product.title == productRD.title
+      //         );
+      //         var findNonduplicatedItem = dataFromRD.filter(
+      //           (product) => product.title != productRD.title
+      //         );
+      //         if (findDuplicatedItem.length > 0) {
+      //           dataFromRD.push(productRD);
+      //           var productAdd = {
+      //             title: findDuplicatedItem[0].title,
+      //             number: findDuplicatedItem[0].number + 1,
+      //             money: findDuplicatedItem[0].money + 10,
+      //           };
+      //           findNonduplicatedItem.push(productAdd);
+      //           alert(
+      //             "You added " +
+      //               productRD.number +
+      //               " " +
+      //               productRD.title +
+      //               " to cart"
+      //           );
+      //           set(ref(database, `cart/${userID}`), findNonduplicatedItem);
+      //         } else {
+      //           dataFromRD.push(productRD);
+      //           alert(
+      //             "You added " +
+      //               productRD.number +
+      //               " " +
+      //               productRD.title +
+      //               " to cart"
+      //           );
+      //           set(ref(database, `cart/${userID}`), dataFromRD);
+      //         }
+      //       } else {
+      //         console.log("No data available");
+      //         listProductRD.push(productRD);
+      //         alert(
+      //           "You added " +
+      //             productRD.number +
+      //             " " +
+      //             productRD.title +
+      //             "(s) to cart"
+      //         );
+      //         set(ref(database, `cart/${userID}`), listProductRD);
+      //       }
+      //       button.disabled = false;
+      //       button.textContent = "+1";
+      //       button.style.filter = "brightness(1)";
+      //     })
+      //     .catch((error) => {
+      //       console.error(error);
+      //     });
+
+      };
+    </script>
   </body>
 </html>
