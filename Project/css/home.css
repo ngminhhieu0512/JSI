@@ -4,6 +4,16 @@
   padding: 0;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+    animation-name: appear;
+    animation-duration: 0.5s;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 body {
   background-image: url(./background1.jpg.png);
@@ -64,7 +74,7 @@ a {
 }
 .header-right input {
   height: 40px;
-  margin-left: 120px;
+  margin-left: 80px;
   margin-right: 8px;
   border: none;
   border-radius: 5px;
@@ -103,14 +113,16 @@ a {
 }
 #account {
   position: absolute;
-  right: 0;
-  top: 80px;
+  margin-top: 5px;
+  margin-left: -60px;
   border: 1px solid white;
   background-color: black;
   display: none;
+  width: 12vw;
 }
 #account h2 {
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 100;
   text-align: center;
   color: white;
   margin: 10px auto;
@@ -178,7 +190,7 @@ a {
   border-radius: 10px;
   position: absolute;
   margin-top: 40px;
-  margin-left: 100px;
+  margin-left: 60px;
   width: 200px;
   z-index: 99;
   display: none;
@@ -190,10 +202,12 @@ a {
   display: none;
 }
 /* Content */
+#container-home {
+  margin-top: 40px;
+  width: 65vw;
+}
 .big-title {
-  position: absolute;
-  top: 20vh;
-  margin-left: 5%;
+  margin-left: 5vw;
 }
 .big-title h1 {
   color: white;
@@ -225,9 +239,7 @@ a {
   }
 }
 .party-intro {
-  position: absolute;
-  top: 250px;
-  margin-left: 5%;
+  margin-left: 5vw;
 }
 .party-intro h1 {
   color: rgb(253, 253, 145);
@@ -255,7 +267,7 @@ a {
 }
 
 #party-info {
-  margin-top: 75vh;
+  margin-top: 120px;
   border-radius: 20px;
   animation-name: color-border;
   animation-duration: 2s;
@@ -403,7 +415,7 @@ a {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
-  height: 120vh;
+  /* height: 120vh; */
   animation: color-border-2 2s;
   animation-iteration-count: infinite;
   border-radius: 20px;
@@ -502,6 +514,7 @@ a {
 }
 #movies img {
   position: absolute;
+  height: 50vh;
   top: 50px;
   right: 50px;
 }
@@ -514,6 +527,7 @@ a {
 }
 #pumpkin-carving img {
   position: absolute;
+  height: 50vh;
   top: 60px;
   right: 50px;
 }
@@ -526,6 +540,7 @@ a {
 }
 #dining img {
   position: absolute;
+  height: 50vh;
   top: 60px;
   right: 50px;
 }
@@ -538,6 +553,7 @@ a {
 }
 #dance img {
   position: absolute;
+  height: 50vh;
   top: 60px;
   right: 50px;
 }
@@ -550,6 +566,7 @@ a {
 }
 #art img {
   position: absolute;
+  height: 50vh;
   top: 60px;
   right: 50px;
 }
@@ -562,6 +579,7 @@ a {
 }
 #quiz img {
   position: absolute;
+  height: 50vh;
   top: 60px;
   right: 50px;
 }

@@ -15,3 +15,4 @@ function showPasswordConfirm() {
         passwordConfirmInput.type = "password"
     }
 }
+

@@ -48,9 +48,11 @@
           </div>
         </div>
         <div class="header-right">
-          <input type="search" placeholder="Search - Products" id="search-input"/>
-        <div id="search-list">
-        </div>
+          <div id="search-container">
+            <input type="search" placeholder="Search - Products" id="search-input"/>
+            <div id="search-list">
+            </div>
+            </div>
           <div class="cart">
             <a href="../html/cart.html">
             <img
@@ -65,6 +67,12 @@
               alt=""
               onclick="showAccount()"
             />
+            <div id="account">
+              <a href="../html/cart.html"><h2>Your cart</h2></a>
+              <a href="../html/login.html"><h2>Log in</h2></a>
+              <a href="../html/signup.html"><h2>Create a new account</h2></a>
+              <h2 id="sign-out" onclick="signOut()">Sign out</h2>
+            </div>
           </div>
         </div>
       </div>

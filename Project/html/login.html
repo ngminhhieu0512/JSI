@@ -27,11 +27,8 @@
           required
         /><br />
         <button type="submit">Log in</button>
-        <img
-          src="https://img.icons8.com/material-outlined/344/visible--v1.png"
-          alt=""
-          onclick="showPassword()"
-        />
+        <input type="checkbox" name="show-psw" id="show-psw" onclick="showPassword()">
+        <label for="show-psw">Show Password</label>
         <p>
           Don't have an account?<br /><a href="../html/signup.html"
             ><span>Sign up here</span></a>
@@ -48,9 +45,17 @@
         e.preventDefault();
         const email = this.email.value.trim();
         const password = this.password.value.trim();
+        const loading = e.target;
+        loading.disabled = true;
+        loading.textContent = "Logging in ...";
+        loading.style.display = "flex";
+        loading.style.alignItems = "center";
+        loading.style.justifyContent = "center";
+        loading.style.fontSize = "30px";
 
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
+            loading.disabled = false;
             window.location.href = "../html/home.html";
           })
           .catch((error) => {

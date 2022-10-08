@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="search" name="" id="searchInput">
+  </head>
+  <body>
+    <input type="search" name="" id="searchInput" />
     <h2 id="mo">Hello World</h2>
     <script>
-         var searchInput = document.getElementById("searchInput");
-         searchInput.addEventListener("input", (e) => {
-            var abc = document.getElementById("mo").innerHTML;
-            var searchValue = e.target.value.toLowerCase();
-            if (abc.trimLeft(searchValue)) {
-            alert("true")
+      var searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("input", (e) => {
+        var abc = document.getElementById("mo").innerHTML;
+        var searchValue = e.target.value.toLowerCase();
+        if (abc.trimLeft(searchValue)) {
+          alert("true");
         }
-         })
-        
+      });
     </script>
-</body>
+
+    <script type="module">
+      import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+      } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+      document.getElementById("add-product").onclick = function () {
+        const userID = auth.currentUser.uid;
+
+        const dbRef = ref(database);
+        get(child(dbRef, `cart/${userID}`))
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              console.log(snapshot.val());
+            } else {
+              console.log("No data available");
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
+    </script>
+  </body>
 </html>

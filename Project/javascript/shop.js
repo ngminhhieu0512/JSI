@@ -332,10 +332,167 @@ window.addEventListener("load", () => {
       title: addToCartBtn.id,
       number: 1,
       money: 10,
-    };
-    localStorage.setItem(addToCartBtn.id, JSON.stringify(instantProduct));
-    alert("You added 1 " + instantProduct.title + " to cart");
-    location.reload();
+    };  
+    if (localStorage.getItem("Witch's hat") === null && instantProduct.title == "Witch's hat") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Witch's cape") === null && instantProduct.title == "Witch's cape") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Witch's broom") === null && instantProduct.title == "Witch's broom") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Jack-o'-lantern") === null && instantProduct.title == "Jack-o'-lantern") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Ghost light bulb") === null && instantProduct.title == "Ghost light bulb") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Wall clock") === null && instantProduct.title == "Wall clock") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Stuffed toys") === null && instantProduct.title == "Stuffed toys") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Candy bucket") === null && instantProduct.title == "Candy bucket") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    if (localStorage.getItem("Message card") === null && instantProduct.title == "Message card") {
+      localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+      return;
+    }
+    
+    if (localStorage.getItem("Witch's hat") && instantProduct.title == "Witch's hat") {
+      var dataWH = JSON.parse(localStorage.getItem("Witch's hat"));
+      var productAdd = {
+        title: "Witch's hat",
+        number: dataWH.number + 1,
+        money: dataWH.money + 10,
+      };
+      localStorage.setItem("Witch's hat", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (localStorage.getItem("Witch's cape") && instantProduct.title == "Witch's cape") {
+      var dataWC = JSON.parse(localStorage.getItem("Witch's cape"));
+      var productAdd = {
+        title: "Witch's cape",
+        number: dataWC.number + 1,
+        money: dataWC.money + 10,
+      };
+      localStorage.setItem("Witch's cape", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (
+      localStorage.getItem("Witch's broom") &&
+      instantProduct.title == "Witch's broom"
+    ) {
+      var dataWB = JSON.parse(localStorage.getItem("Witch's broom"));
+      var productAdd = {
+        title: "Witch's broom",
+        number: dataWB.number + 1,
+        money: dataWB.money + 10,
+      };
+      localStorage.setItem("Witch's broom", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (
+      localStorage.getItem("Jack-o'-lantern") &&
+      instantProduct.title == "Jack-o'-lantern"
+    ) {
+      var dataJL = JSON.parse(localStorage.getItem("Jack-o'-lantern"));
+      var productAdd = {
+        title: "Jack-o'-lantern",
+        number: dataJL.number + 1,
+        money: dataJL.money + 10,
+      };
+      localStorage.setItem("Jack-o'-lantern", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (localStorage.getItem("Ghost light bulb") && instantProduct.title == "Ghost light bulb") {
+      var dataGL = JSON.parse(localStorage.getItem("Ghost light bulb"));
+      var productAdd = {
+        title: "Ghost light bulb",
+        number: dataGL.number + 1,
+        money: dataGL.money + 10,
+      };
+      localStorage.setItem("Ghost light bulb", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (localStorage.getItem("Wall clock") && instantProduct.title == "Wall clock") {
+      var dataWK = JSON.parse(localStorage.getItem("Wall clock"));
+      var productAdd = {
+        title: "Wall clock",
+        number: dataWK.number + 1,
+        money: dataWK.money + 10
+      };
+      localStorage.setItem("Wall clock", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (localStorage.getItem("Stuffed toys") && instantProduct.title == "Stuffed toys") {
+      var dataST = JSON.parse(localStorage.getItem("Stuffed toys"));
+      var productAdd = {
+        title: "Stuffed toys",
+        number: dataST.number + 1,
+        money: dataST.money + 10
+      };
+      localStorage.setItem("Stuffed toys", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (localStorage.getItem("Candy bucket") && instantProduct.title == "Candy bucket") {
+      var dataCB = JSON.parse(localStorage.getItem("Candy bucket"));
+      var productAdd = {
+        title: "Candy bucket",
+        number: dataCB.number + 1,
+        money: dataCB.money + 10
+      };
+      localStorage.setItem("Candy bucket", JSON.stringify(productAdd));
+      alert("You added 1 " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
+    if (localStorage.getItem("Message card") && instantProduct.title == "Message card") {
+      var dataMC = JSON.parse(localStorage.getItem("Message card"));
+      var productAdd = {
+        title: "Message card",
+        number: dataMC.number + 1,
+        money: dataMC.money + 10
+      };
+      localStorage.setItem("Message card", JSON.stringify(productAdd));
+      alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
+      location.reload();
+    }
   };
 
   var searchInput = document.getElementById("search-input");

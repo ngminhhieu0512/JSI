@@ -25,13 +25,14 @@
           id="password-input"
           required
         /><br />
-        <button type="submit">Sign up</button>
-        <img
-          src="https://img.icons8.com/material-outlined/344/visible--v1.png"
-          alt=""
+        <input
+          type="checkbox"
+          name="show-psw"
+          id="show-psw"
           onclick="showPassword()"
-          id="show-pass-1"
         />
+        <label for="show-psw">Show Password</label>
+        <button type="submit" id="click-btn">Sign up</button>
       </form>
     </div>
 
@@ -44,10 +45,18 @@
         e.preventDefault();
         const email = this.email.value.trim();
         const password = this.password.value.trim();
+        const loading = e.target;
+        loading.disabled = true;
+        loading.textContent = "Signing up ...";
+        loading.style.display = "flex";
+        loading.style.alignItems = "center";
+        loading.style.justifyContent = "center";
+        loading.style.fontSize = "30px";
 
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed in
+            loading.disabled = false;
             window.location.href = "../html/login.html";
           })
           .catch((error) => {

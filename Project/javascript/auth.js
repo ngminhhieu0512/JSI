@@ -28,14 +28,6 @@ const firebase = initializeApp(firebaseConfig);
 window.database = getDatabase(firebase);
 window.auth = getAuth(firebase);
 
-const userID = Math.floor(Math.random() * 100) + 1;
-set(ref(database, `cart/user${userID}`), [
-  {
-    id: 0,
-    quantity: 100,
-  },
-]);
-
 var signOutBtn = document.getElementById("sign-out");
 signOutBtn.addEventListener("click", () => {
   signOut(auth)

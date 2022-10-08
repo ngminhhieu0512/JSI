@@ -41,17 +41,14 @@ input::placeholder {
 button {
   width: 100px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 10px;
   float: right;
   font-size: 20px;
   border-radius: 5px;
+  border: none;
   background-color: white;
   cursor: pointer;
 }
-#show-pass-1 {
-  position: absolute;
-  height: 25px;
-  top: 320px;
-  right: 450px;
-  cursor: pointer;
+#show-psw {
+  margin: 20px 0;
 }

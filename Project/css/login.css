@@ -44,7 +44,7 @@ input::placeholder {
 button {
   width: 100px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 40px;
   float: right;
   font-size: 20px;
   border-radius: 5px;
@@ -52,12 +52,8 @@ button {
   background-color: white;
   cursor: pointer;
 }
-img {
-  position: absolute;
-  height: 25px;
-  top: 320px;
-  right: 450px;
-  cursor: pointer;
+#show-psw {
+  margin: 5px 0;
 }
 p {
   margin-top: 20px;
