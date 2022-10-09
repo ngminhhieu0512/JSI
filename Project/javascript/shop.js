@@ -124,59 +124,7 @@ var products = [
 
 localStorage.setItem("Products", JSON.stringify(products));
 
-var listProduct = [];
-
-// if (localStorage.getItem("Witch's hat")) {
-//   var takeProductWH = JSON.parse(localStorage.getItem("Witch's hat"));
-//   listProduct.push(takeProductWH);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Witch's cape")) {
-//   var takeProductWC = JSON.parse(localStorage.getItem("Witch's cape"));
-//   listProduct.push(takeProductWC);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Witch's broom")) {
-//   var takeProductWB = JSON.parse(localStorage.getItem("Witch's broom"));
-//   listProduct.push(takeProductWB);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Jack-o'-lantern")) {
-//   var takeProductJL = JSON.parse(localStorage.getItem("Jack-o'-lantern"));
-//   listProduct.push(takeProductJL);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Ghost light bulb")) {
-//   var takeProductGL = JSON.parse(localStorage.getItem("Ghost light bulb"));
-//   listProduct.push(takeProductGL);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Wall clock")) {
-//   var takeProductWC = JSON.parse(localStorage.getItem("Wall clock"));
-//   listProduct.push(takeProductWC);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Stuffed toys")) {
-//   var takeProductST = JSON.parse(localStorage.getItem("Stuffed toys"));
-//   listProduct.push(takeProductST);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Candy bucket")) {
-//   var takeProductCB = JSON.parse(localStorage.getItem("Candy bucket"));
-//   listProduct.push(takeProductCB);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Message card")) {
-//   var takeProductMC = JSON.parse(localStorage.getItem("Message card"));
-//   listProduct.push(takeProductMC);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-// if (localStorage.getItem("Ticket")) {
-//   var takeProductTK = JSON.parse(localStorage.getItem("Ticket"));
-//   listProduct.push(takeProductTK);
-//   localStorage.setItem("List Product", JSON.stringify(listProduct));
-// }
-
+var listProduct = JSON.parse(localStorage.getItem("List Product"));
 var totalQuantity = 0;
 for (let i = 0; i < listProduct.length; i++) {
   totalQuantity = totalQuantity + listProduct[i].number;
@@ -272,7 +220,7 @@ window.addEventListener("load", () => {
                   class="product-img"
                   src="${costume.image_url}"
                 />
-                <button id="add-to-cart-instant" class="${costume.name}" onclick="addToCartInstant(this)">+1</button>
+                <button id="${costume.name}" onclick="hello()">+1</button>
               </div>
               <a href="../html/detailproduct.html?id=${costume.id}"><h2 id="${costume.name}" class="product-name" onclick="productDetail(this)">${costume.name}</h2>
               <h2>10.000 VND</h2>
@@ -290,7 +238,7 @@ window.addEventListener("load", () => {
                   class="product-img"
                   src="${decoration.image_url}"
                 />
-                <button id="add-to-cart-instant" class="${decoration.name}">+1</button>
+                <button id="${decoration.name}">+1</button>
               </div>
               <a href="../html/detailproduct.html?id=${decoration.id}"><h2 id="${decoration.name}" class="product-name" onclick="productDetail(this)">${decoration.name}</h2>
               <h2>10.000 VND</h2>
@@ -308,7 +256,7 @@ window.addEventListener("load", () => {
                   class="product-img"
                   src="${toy.image_url}"
                 />
-                <button id="add-to-cart-instant" class="${toy.name}">+1</button>
+                <button id="${toy.name}">+1</button>
               </div>
               <a href="../html/detailproduct.html?id=${toy.id}"><h2 id="${toy.name}" class="product-name" onclick="productDetail(this)">${toy.name}</h2>
               <h2>10.000 VND</h2>
@@ -326,6 +274,10 @@ window.addEventListener("load", () => {
       account.style.display = "none";
     }
   }
+
+  // document.getElementById("Witch's hat 1").onclick = function (e) {
+  //   console.log("Hello")
+  // }
 
   // function addToCartInstant(addToCartBtn) {
   //   var instantProduct = {

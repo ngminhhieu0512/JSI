@@ -57,10 +57,6 @@ if (localStorage.getItem("Customer Info") === null) {
   document.getElementById("gotobill").style.display = "none";
 }
 
-function changePage() {
-  window.location.href = "../html/detailproduct.html";
-}
-
 function showAccount() {
   var account = document.getElementById("account");
   if (account.style.display === "none") {

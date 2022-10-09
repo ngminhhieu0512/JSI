@@ -129,7 +129,7 @@ let listProductRender = listProduct
     <td id="order-name">${item.title}</td>
     <td>${item.number}</td>
     <td>${item.money}.000 VND</td>
-    <td><button id="${item.title}" onclick="removeItem(this)">Remove</button></td>
+    <td><button id="${item.title}" class="remove-btn">Remove</button></td>
   </tr>`;
   })
   .join("\n");
@@ -150,17 +150,6 @@ var total = 0;
 for (let i = 0; i < listProduct.length; i++) {
   total = total + listProduct[i].money;
   document.getElementById("total").innerHTML = "Total: " + total + ".000 VND";
-}
-
-function removeItem(removeBtn) {
-  for (let i = 0; i < listProduct.length; i++) {
-    if (removeBtn.id == listProduct[i].title) {
-      listProduct.splice(i, 1);
-      localStorage.removeItem(removeBtn.id)
-      localStorage.setItem("List Product", JSON.stringify(listProduct));
-    }
-  }
-  location.reload();
 }
 
 function showAccount() {

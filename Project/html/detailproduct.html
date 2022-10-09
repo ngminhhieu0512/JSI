@@ -228,6 +228,8 @@
                     "(s) to cart"
                 );
                 set(ref(database, `cart/${userID}`), findNonduplicatedItem);
+                localStorage.setItem("List Product", JSON.stringify(findNonduplicatedItem));
+                location.reload();
               } else {
                 dataFromRD.push(productRD);
                 alert(
@@ -238,6 +240,8 @@
                     "(s) to cart"
                 );
                 set(ref(database, `cart/${userID}`), dataFromRD);
+                localStorage.setItem("List Product", JSON.stringify(dataFromRD));
+                location.reload();
               }
             } else {
               console.log("No data available");
@@ -250,10 +254,14 @@
                   "(s) to cart"
               );
               set(ref(database, `cart/${userID}`), listProductRD);
+              localStorage.setItem("List Product", JSON.stringify(listProductRD));
+                location.reload();
             }
             button.disabled = false;
             button.textContent = "Add to cart";
             button.style.filter = "brightness(1)";
+            // localStorage.setItem("List Product", JSON.stringify(dataFromRD));
+            // location.reload();
           })
           .catch((error) => {
             console.error(error);

@@ -1,106 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
-    <link rel="stylesheet" href="../css/cart.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
     <!-- Header -->
     <div id="header">
-        <div class="header-left">
-          <a href="../html/home.html">
-          <img src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/ghost.png" alt="">
-          </a>
+      <div class="header-left">
+        <a href="../html/home.html">
+          <img
+            src="https://img.icons8.com/sf-regular-filled/48/FFFFFF/ghost.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="header-center">
+        <div class="home">
+          <h1><a href="../html/home.html">Home</a></h1>
         </div>
-        <div class="header-center">
-          <div class="home">
-            <h1><a href="../html/home.html">Home</a></h1>
-          </div>
-          <div class="shop">
-            <h1><a href="../html/preshop.html">Shop</a></h1>
-            <div class="shop-dropdown">
-              <ul>
-                <a href="../html/detailproduct.html?id=0"><li>Witch's hat</li></a>
-                <a href="../html/detailproduct.html?id=1"><li>Witch's cape</li></a>
-                <a href="../html/detailproduct.html?id=2"><li>Witch's broom</li></a>
-              </ul>
-              <ul>
-                <a href="../html/detailproduct.html?id=3"><li>Jack-o'-lantern</li></a>
-                <a href="../html/detailproduct.html?id=4"><li>Ghost light bulb</li></a>
-                <a href="../html/detailproduct.html?id=5"><li>Wall clock</li></a>
-              </ul>
-              <ul>
-                <a href="../html/detailproduct.html?id=6"><li>Stuffed toys</li></a>
-                <a href="../html/detailproduct.html?id=7"><li>Candy bucket</li></a>
-                <a href="../html/detailproduct.html?id=8"><li>Message card</li></a>
-              </ul>
-              <h2 class="corner-1">🎃</h2>
-              <h2 class="corner-2">🎃</h2>
-              <h2 class="corner-3">🎃</h2>
-              <h2 class="corner-4">🎃</h2>
-            </div>
-          </div>
-          <div class="contact">
-            <h1><a href="../html/contact.html">Contact</a></h1>
+        <div class="shop">
+          <h1><a href="../html/preshop.html">Shop</a></h1>
+          <div class="shop-dropdown">
+            <ul>
+              <a href="../html/detailproduct.html?id=0"><li>Witch's hat</li></a>
+              <a href="../html/detailproduct.html?id=1"
+                ><li>Witch's cape</li></a
+              >
+              <a href="../html/detailproduct.html?id=2"
+                ><li>Witch's broom</li></a
+              >
+            </ul>
+            <ul>
+              <a href="../html/detailproduct.html?id=3"
+                ><li>Jack-o'-lantern</li></a
+              >
+              <a href="../html/detailproduct.html?id=4"
+                ><li>Ghost light bulb</li></a
+              >
+              <a href="../html/detailproduct.html?id=5"><li>Wall clock</li></a>
+            </ul>
+            <ul>
+              <a href="../html/detailproduct.html?id=6"
+                ><li>Stuffed toys</li></a
+              >
+              <a href="../html/detailproduct.html?id=7"
+                ><li>Candy bucket</li></a
+              >
+              <a href="../html/detailproduct.html?id=8"
+                ><li>Message card</li></a
+              >
+            </ul>
+            <h2 class="corner-1">🎃</h2>
+            <h2 class="corner-2">🎃</h2>
+            <h2 class="corner-3">🎃</h2>
+            <h2 class="corner-4">🎃</h2>
           </div>
         </div>
-        <div class="header-right">
-          <div id="search-container">
-            <input type="search" placeholder="Search - Products" id="search-input"/>
-            <div id="search-list">
-            </div>
-          </div>
-          <div class="cart">
-            <img
-              src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
-              alt=""
-            />
-          </div>
-          <div class="account">
-            <img
-              src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/FFFFFF/external-account-social-media-interface-anggara-glyph-anggara-putra.png"
-              alt=""
-              onclick="showAccount()"
-            />
-            <div id="account">
-              <a href="../html/cart.html"><h2>Your cart</h2></a>
-              <a href="../html/login.html"><h2>Log in</h2></a>
-              <a href="../html/signup.html"><h2>Create a new account</h2></a>
-              <h2 id="sign-out" onclick="signOut()">Sign out</h2>
-            </div>
+        <div class="contact">
+          <h1><a href="../html/contact.html">Contact</a></h1>
+        </div>
+      </div>
+      <div class="header-right">
+        <div id="search-container">
+          <input
+            type="search"
+            placeholder="Search - Products"
+            id="search-input"
+          />
+          <div id="search-list"></div>
+        </div>
+        <div class="cart">
+          <img
+            src="https://img.icons8.com/sf-black-filled/64/FFFFFF/shopping-cart-loaded.png"
+            alt=""
+          />
+        </div>
+        <div class="account">
+          <img
+            src="https://img.icons8.com/external-anggara-glyph-anggara-putra/32/FFFFFF/external-account-social-media-interface-anggara-glyph-anggara-putra.png"
+            alt=""
+            onclick="showAccount()"
+          />
+          <div id="account">
+            <a href="../html/cart.html"><h2>Your cart</h2></a>
+            <a href="../html/login.html"><h2>Log in</h2></a>
+            <a href="../html/signup.html"><h2>Create a new account</h2></a>
+            <h2 id="sign-out" onclick="signOut()">Sign out</h2>
           </div>
         </div>
       </div>
-      <div id="account">
-        <a href="../html/cart.html"><h2>Your cart</h2></a>
-        <a href="../html/login.html"><h2>Log in</h2></a>
-        <a href="../html/signup.html"><h2>Create a new account</h2></a>
-        <h2 id="sign-out">Sign out</h2>
+    </div>
+    <div id="account">
+      <a href="../html/cart.html"><h2>Your cart</h2></a>
+      <a href="../html/login.html"><h2>Log in</h2></a>
+      <a href="../html/signup.html"><h2>Create a new account</h2></a>
+      <h2 id="sign-out">Sign out</h2>
+    </div>
+
+    <!-- Content -->
+    <h1 id="remind"></h1>
+    <table id="table"></table>
+    <h2 id="total"></h2>
+    <a href="../html/checkout.html"><h2 id="checkout">Checkout</h2></a>
+
+    <!-- Footer -->
+    <section id="footer">
+      <h1>About us</h1>
+      <h1>Contact us</h1>
+      <div class="social-media">
+        <img
+          src="https://img.icons8.com/color/48/000000/facebook-new.png"
+          alt=""
+        />
+        <img
+          src="https://img.icons8.com/color/48/000000/youtube-play.png"
+          alt=""
+        />
+        <img
+          src="https://img.icons8.com/fluency/48/000000/instagram-new.png"
+          alt=""
+        />
       </div>
+      <a href="../html/ticket.html"
+        ><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a
+      >
+    </section>
 
-      <!-- Content -->
-      <h1 id="remind"></h1>
-      <table id="table">
-      </table>
-      <h2 id="total"></h2>
-      <a href="../html/checkout.html"><h2 id="checkout">Checkout</h2></a>
+    <script src="../javascript/cart.js"></script>
+    <script type="module" src="../javascript/auth.js"></script>
+    <script type="module">
+      import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
 
-      <!-- Footer -->
-      <section id="footer">
-        <h1>About us</h1>
-        <h1>Contact us</h1>
-        <div class="social-media">
-          <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="">
-          <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="">
-          <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" alt="">
-        </div>
-        <a href="../html/ticket.html"><button class="buy-now-btn-3">BUY YOUR TICKETS NOW</button></a>
-      </section>
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          console.log(user);
+        } else {
+        }
+      });
+      var dataFromLS = JSON.parse(localStorage.getItem("List Product"));
+      var removeBtn = document.getElementsByClassName("remove-btn");
+      for (let i = 0; i < dataFromLS.length; i++) {
+        removeBtn[i].onclick = function (e) {
+          const userID = auth.currentUser.uid;
+          const database = getDatabase();
+          const dbRef = ref(database);
 
-      <script src="../javascript/cart.js"></script>
-      <script type="module" src="../javascript/auth.js"></script>
-</body>
+          get(child(dbRef, `cart/${userID}`))
+            .then((snapshot) => {
+              if (snapshot.exists()) {
+                var dataFromRD = snapshot.val();
+
+                for (let u = 0; u < dataFromRD.length; u++) {
+                  if (removeBtn[i].id == dataFromRD[u].title) {
+                    dataFromRD.splice(u, 1);
+                  }
+                }
+
+                set(ref(database, `cart/${userID}`), dataFromRD);
+                localStorage.setItem(
+                  "List Product",
+                  JSON.stringify(dataFromRD)
+                );
+                location.reload();
+              } else {
+                console.log("No data available");
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        };
+      }
+    </script>
+  </body>
 </html>
