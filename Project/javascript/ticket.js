@@ -49,30 +49,30 @@ function decrease() {
   }
 };
 
-function addToCart() {
-  var ticket = {
-    title: "Ticket",
-    number: quantity,
-    money: famPrice * quantity,
-  };
-  if (localStorage.getItem("Ticket") === null && ticket.title == "Ticket") {
-    localStorage.setItem(ticket.title, JSON.stringify(ticket));
-    alert("You added " + quantity + " " + ticket.title + "(s) to cart");
-    location.reload();
-    return;
-  }
-  if (localStorage.getItem("Ticket") && ticket.title == "Ticket") {
-    var dataTK = JSON.parse(localStorage.getItem("Ticket"));
-    var ticketAdd = {
-      title: "Ticket",
-      number: dataTK.number + ticket.number,
-      money: dataTK.money + ticket.money,
-    };
-    localStorage.setItem("Ticket", JSON.stringify(ticketAdd));
-    alert("You added " + quantity + " " + ticket.title + "(s) to cart");
-    location.reload();
-  }
-};
+// function addToCart() {
+//   var ticket = {
+//     title: "Ticket",
+//     number: quantity,
+//     money: famPrice * quantity,
+//   };
+//   if (localStorage.getItem("Ticket") === null && ticket.title == "Ticket") {
+//     localStorage.setItem(ticket.title, JSON.stringify(ticket));
+//     alert("You added " + quantity + " " + ticket.title + "(s) to cart");
+//     location.reload();
+//     return;
+//   }
+//   if (localStorage.getItem("Ticket") && ticket.title == "Ticket") {
+//     var dataTK = JSON.parse(localStorage.getItem("Ticket"));
+//     var ticketAdd = {
+//       title: "Ticket",
+//       number: dataTK.number + ticket.number,
+//       money: dataTK.money + ticket.money,
+//     };
+//     localStorage.setItem("Ticket", JSON.stringify(ticketAdd));
+//     alert("You added " + quantity + " " + ticket.title + "(s) to cart");
+//     location.reload();
+//   }
+// };
 
 var listProduct = JSON.parse(localStorage.getItem("List Product"));
 var totalQuantity = 0;

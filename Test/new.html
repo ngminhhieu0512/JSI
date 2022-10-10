@@ -5,35 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
 </head>
 <body>
     <h1 id="a" class="b">Hello</h1>
     <script>
-        // var word = "abc";
-        // var product = [
-        //     {
-        //         name: "abc",
-        //         age: "12",
-        //     },
-        //     {
-        //         name: "def", 
-        //         age: "11",
-        //     }
-        // ];
-        // for (let i = 0; i < product.length; i++) {
-        //     if (product[i].includes(word)) {
-        //         product.splice(i, 1);
-        //         var newProduct = {
-        //             name: "abc",
-        //             age: "15"
-        //         }
-        //         product.push(newProduct);
-                
-        //     }
-            
-        // }
-        // console.log(product)
-        console.log(document.getElementById("a").className)
+    window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + "#loaded";
+        window.location.reload();
+    }
+    }
     </script>
 </body>
 </html>

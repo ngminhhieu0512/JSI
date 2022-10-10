@@ -1,6 +1,9 @@
 var activityContainer = document.getElementById("activity-container");
 var footer = document.getElementById("footer");
-
+var blank = [];
+if (localStorage.getItem("List Product") === null) {
+  localStorage.setItem("List Product", JSON.stringify(blank));
+}
 // Movies
 var movies = document.getElementById("movies");
 var show = document.getElementById("show-detail-1");
@@ -102,9 +105,9 @@ for (let i = 0; i < listProduct.length; i++) {
   totalQuantity = totalQuantity + listProduct[i].number;
 }
 if (totalQuantity > 99) {
-  document.getElementById("total-quantity").innerHTML = "m";
+  document.getElementById("total-quantity-home").innerHTML = "m";
 } else {
-  document.getElementById("total-quantity").innerHTML = totalQuantity;
+  document.getElementById("total-quantity-home").innerHTML = totalQuantity;
 }
 
 function showAccount() {
@@ -129,107 +132,142 @@ searchInput.addEventListener("input", (e) => {
   if (document.getElementById("WITCH'S HAT").innerHTML.includes(searchValue)) {
     document.getElementById("WITCH'S HAT").style.display = "block";
   }
-  if (document.getElementById("WITCH'S HAT").innerHTML.includes(searchValue) === false) {
+  if (
+    document.getElementById("WITCH'S HAT").innerHTML.includes(searchValue) ===
+    false
+  ) {
     document.getElementById("WITCH'S HAT").style.display = "none";
   }
   if (document.getElementById("WITCH'S CAPE").innerHTML.includes(searchValue)) {
     document.getElementById("WITCH'S CAPE").style.display = "block";
   }
-  if (document.getElementById("WITCH'S CAPE").innerHTML.includes(searchValue) === false) {
+  if (
+    document.getElementById("WITCH'S CAPE").innerHTML.includes(searchValue) ===
+    false
+  ) {
     document.getElementById("WITCH'S CAPE").style.display = "none";
   }
-  if (document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue)) {
+  if (
+    document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue)
+  ) {
     document.getElementById("WITCH'S BROOM").style.display = "block";
   }
-  if (document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue) === false) {
+  if (
+    document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue) ===
+    false
+  ) {
     document.getElementById("WITCH'S BROOM").style.display = "none";
   }
-  if (document.getElementById("JACK-O'-LANTERN").innerHTML.includes(searchValue)) {
+  if (
+    document.getElementById("JACK-O'-LANTERN").innerHTML.includes(searchValue)
+  ) {
     document.getElementById("JACK-O'-LANTERN").style.display = "block";
   }
-  if (document.getElementById("JACK-O'-LANTERN").innerHTML.includes(searchValue) === false) {
+  if (
+    document
+      .getElementById("JACK-O'-LANTERN")
+      .innerHTML.includes(searchValue) === false
+  ) {
     document.getElementById("JACK-O'-LANTERN").style.display = "none";
   }
-  if (document.getElementById("GHOST LIGHT BULB").innerHTML.includes(searchValue)) {
+  if (
+    document.getElementById("GHOST LIGHT BULB").innerHTML.includes(searchValue)
+  ) {
     document.getElementById("GHOST LIGHT BULB").style.display = "block";
   }
-  if (document.getElementById("GHOST LIGHT BULB").innerHTML.includes(searchValue) === false) {
+  if (
+    document
+      .getElementById("GHOST LIGHT BULB")
+      .innerHTML.includes(searchValue) === false
+  ) {
     document.getElementById("GHOST LIGHT BULB").style.display = "none";
   }
   if (document.getElementById("WALL CLOCK").innerHTML.includes(searchValue)) {
     document.getElementById("WALL CLOCK").style.display = "block";
   }
-  if (document.getElementById("WALL CLOCK").innerHTML.includes(searchValue) === false) {
+  if (
+    document.getElementById("WALL CLOCK").innerHTML.includes(searchValue) ===
+    false
+  ) {
     document.getElementById("WALL CLOCK").style.display = "none";
   }
   if (document.getElementById("STUFFED TOYS").innerHTML.includes(searchValue)) {
     document.getElementById("STUFFED TOYS").style.display = "block";
   }
-  if (document.getElementById("STUFFED TOYS").innerHTML.includes(searchValue) === false) {
+  if (
+    document.getElementById("STUFFED TOYS").innerHTML.includes(searchValue) ===
+    false
+  ) {
     document.getElementById("STUFFED TOYS").style.display = "none";
   }
   if (document.getElementById("CANDY BUCKET").innerHTML.includes(searchValue)) {
     document.getElementById("CANDY BUCKET").style.display = "block";
   }
-  if (document.getElementById("CANDY BUCKET").innerHTML.includes(searchValue) === false) {
+  if (
+    document.getElementById("CANDY BUCKET").innerHTML.includes(searchValue) ===
+    false
+  ) {
     document.getElementById("CANDY BUCKET").style.display = "none";
   }
   if (document.getElementById("MESSAGE CARD").innerHTML.includes(searchValue)) {
     document.getElementById("MESSAGE CARD").style.display = "block";
   }
-  if (document.getElementById("MESSAGE CARD").innerHTML.includes(searchValue) === false) {
+  if (
+    document.getElementById("MESSAGE CARD").innerHTML.includes(searchValue) ===
+    false
+  ) {
     document.getElementById("MESSAGE CARD").style.display = "none";
   }
-})
+});
 
 var productsSearch = [
   {
     name: "WITCH'S HAT",
-    id: 0
+    id: 0,
   },
   {
     name: "WITCH'S CAPE",
-    id: 1
+    id: 1,
   },
   {
     name: "WITCH'S BROOM",
-    id: 2
+    id: 2,
   },
   {
     name: "JACK-O'-LANTERN",
-    id: 3
+    id: 3,
   },
   {
     name: "GHOST LIGHT BULB",
-    id: 4
+    id: 4,
   },
   {
     name: "WALL CLOCK",
-    id: 5
+    id: 5,
   },
   {
     name: "STUFFED TOYS",
-    id: 6
+    id: 6,
   },
   {
     name: "CANDY BUCKET",
-    id: 7
+    id: 7,
   },
   {
     name: "MESSAGE CARD",
-    id: 8
+    id: 8,
   },
 ];
 
-var searchListRender = productsSearch.map((user) => {
-  return `
+var searchListRender = productsSearch
+  .map((user) => {
+    return `
   <a href="../html/detailproduct.html?id=${user.id}"><h2 id="${user.name}">${user.name}</h2></a>
   `;
-})
-.join("\n");
+  })
+  .join("\n");
 
 let searchList = document.getElementById("search-list");
 searchList.innerHTML = `
 ${searchListRender}
-`
-
+`;

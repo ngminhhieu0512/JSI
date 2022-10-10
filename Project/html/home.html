@@ -59,7 +59,7 @@
             alt=""
           />
           </a>
-          <h2 id="total-quantity"></h2>
+          <h2 id="total-quantity-home"></h2>
         </div>
         <div class="account">
           <img
@@ -69,7 +69,6 @@
           />
           <div id="account">
             <a href="../html/cart.html"><h2>Your cart</h2></a>
-            <a href="../html/login.html"><h2>Log in</h2></a>
             <a href="../html/signup.html"><h2>Create a new account</h2></a>
             <h2 id="sign-out" onclick="signOut()">Sign out</h2>
           </div>
@@ -232,6 +231,7 @@
 
     <script src="../javascript/home.js"></script>
     <script type="module" src="../javascript/auth.js"></script>
+    <script type="module" src="../javascript/data.js"></script>
     <script type="module">
       import { onAuthStateChanged, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
@@ -246,7 +246,7 @@
           document.getElementById("party-info").style.display = "none";
           document.getElementById("activity").style.display = "none";
           document.getElementById("footer").style.display = "none";
-          document.getElementById("total-quantity").style.display = "none";
+          document.getElementById("total-quantity-home").style.display = "none";
 
           sendEmailVerification(auth.currentUser)
           .then(() => {
@@ -257,6 +257,7 @@
         
       } else {
         // window.location.href = "../html/login.html";
+        console.log("failed")
       }
       })
     </script>

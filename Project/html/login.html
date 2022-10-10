@@ -27,11 +27,17 @@
           required
         /><br />
         <button type="submit">Log in</button>
-        <input type="checkbox" name="show-psw" id="show-psw" onclick="showPassword()">
+        <input
+          type="checkbox"
+          name="show-psw"
+          id="show-psw"
+          onclick="showPassword()"
+        />
         <label for="show-psw">Show Password</label>
         <p>
           Don't have an account?<br /><a href="../html/signup.html"
-            ><span>Sign up here</span></a>
+            ><span>Sign up here</span></a
+          >
         </p>
       </form>
     </div>
@@ -39,7 +45,10 @@
     <script src="../javascript/login.js"></script>
     <script type="module" src="../javascript/auth.js"></script>
     <script type="module">
-      import { signInWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+      import {
+        signInWithEmailAndPassword,
+        sendEmailVerification,
+      } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
       document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
@@ -56,13 +65,15 @@
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             loading.disabled = false;
+            localStorage.setItem("User ID", JSON.stringify(auth.currentUser.uid));
+            localStorage.removeItem("List Product");
             window.location.href = "../html/home.html";
           })
           .catch((error) => {
             alert("Wrong email or password");
+            location.reload();
           });
       });
-
     </script>
   </body>
 </html>

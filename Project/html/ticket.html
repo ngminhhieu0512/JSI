@@ -70,7 +70,6 @@
             />
             <div id="account">
               <a href="../html/cart.html"><h2>Your cart</h2></a>
-              <a href="../html/login.html"><h2>Log in</h2></a>
               <a href="../html/signup.html"><h2>Create a new account</h2></a>
               <h2 id="sign-out" onclick="signOut()">Sign out</h2>
             </div>
@@ -124,7 +123,7 @@
         <button id="increase" onclick="increase()">+</button>
         <h2 id="total"></h2>
       </div>
-      <button class="addtocart" id="add-product" onclick="addToCart()"><h2>Add to cart</h2></button>
+      <button class="addtocart" id="add-product"><h2>Add to cart</h2></button>
 
       <!-- Footer -->
     <section id="footer">
@@ -142,6 +141,14 @@
       <script type="module" src="../javascript/auth.js"></script>
       <script type="module">
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+        import {
+        getDatabase,
+        ref,
+        set,
+        child,
+        get,
+        remove,
+      } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
   
         onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -154,6 +161,86 @@
           document.getElementById("container").style.marginTop = "160px";
        }
       });
+      
+      var listProductRD = [];
+      document.getElementById("add-product").onclick = function (e) {
+        const userID = auth.currentUser.uid;
+        const database = getDatabase();
+        const dbRef = ref(database);
+        var button = e.target;
+        button.disabled = true;
+        button.textContent = "Adding to cart ...";
+        button.style.filter = "brightness(0.7)";
+
+        var productTicket = {
+          title: "Ticket",
+          number: quantity,
+          money: famPrice * quantity,
+        };
+
+        get(child(dbRef, `cart/${userID}`))
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              var dataFromRD = snapshot.val();
+              var findDuplicatedItem = dataFromRD.filter(
+                (product) => product.title == productTicket.title
+              );
+              var findNonduplicatedItem = dataFromRD.filter(
+                (product) => product.title != productTicket.title
+              );
+              if (findDuplicatedItem.length > 0) {
+                dataFromRD.push(productTicket);
+                var productAdd = {
+                  title: findDuplicatedItem[0].title,
+                  number: findDuplicatedItem[0].number + productTicket.number,
+                  money: findDuplicatedItem[0].money + productTicket.money,
+                };
+                findNonduplicatedItem.push(productAdd);
+                alert(
+                  "You added " +
+                    productTicket.number +
+                    " " +
+                    productTicket.title +
+                    "(s) to cart"
+                );
+                set(ref(database, `cart/${userID}`), findNonduplicatedItem);
+                localStorage.setItem("List Product", JSON.stringify(findNonduplicatedItem));
+                location.reload();
+              } else {
+                dataFromRD.push(productTicket);
+                alert(
+                  "You added " +
+                    productTicket.number +
+                    " " +
+                    productTicket.title +
+                    "(s) to cart"
+                );
+                set(ref(database, `cart/${userID}`), dataFromRD);
+                localStorage.setItem("List Product", JSON.stringify(dataFromRD));
+                location.reload();
+              }
+            } else {
+              console.log("No data available");
+              listProductRD.push(productTicket);
+              alert(
+                "You added " +
+                  productTicket.number +
+                  " " +
+                  productTicket.title +
+                  "(s) to cart"
+              );
+              set(ref(database, `cart/${userID}`), listProductRD);
+              localStorage.setItem("List Product", JSON.stringify(listProductRD));
+                location.reload();
+            }
+            button.disabled = false;
+            button.textContent = "Add to cart";
+            button.style.filter = "brightness(1)";
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      };
       </script>
 </body>
 </html>

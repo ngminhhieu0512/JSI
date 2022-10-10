@@ -8,7 +8,8 @@ import {
   getDatabase,
   ref,
   set,
-  onValue,
+  child,
+  get,
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -27,9 +28,13 @@ const firebaseConfig = {
 const firebase = initializeApp(firebaseConfig);
 window.database = getDatabase(firebase);
 window.auth = getAuth(firebase);
+var databaseID = [];
 
 var signOutBtn = document.getElementById("sign-out");
 signOutBtn.addEventListener("click", () => {
+  localStorage.removeItem("List Product");
+  databaseID.push(auth.currentUser.uid);
+  localStorage.setItem("User ID", JSON.stringify(databaseID));
   signOut(auth)
     .then(() => {
       window.location.href = "../html/login.html";
@@ -38,3 +43,4 @@ signOutBtn.addEventListener("click", () => {
       // An error happened.
     });
 });
+

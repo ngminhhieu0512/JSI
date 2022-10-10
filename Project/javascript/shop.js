@@ -5,6 +5,10 @@ var showAll = document.getElementById("show-all");
 var costumeContent = document.getElementById("big-row-costume");
 var decorContent = document.getElementById("big-row-decoration");
 var toyContent = document.getElementById("big-row-toy");
+var listProduct = [];
+if(localStorage.getItem("List Product") === null) {
+  localStorage.setItem("List Product", JSON.stringify(listProduct))
+}
 
 costume.addEventListener("click", (event) => {
   event.preventDefault();
