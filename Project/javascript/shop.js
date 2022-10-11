@@ -6,8 +6,8 @@ var costumeContent = document.getElementById("big-row-costume");
 var decorContent = document.getElementById("big-row-decoration");
 var toyContent = document.getElementById("big-row-toy");
 var listProduct = [];
-if(localStorage.getItem("List Product") === null) {
-  localStorage.setItem("List Product", JSON.stringify(listProduct))
+if (localStorage.getItem("List Product") === null) {
+  localStorage.setItem("List Product", JSON.stringify(listProduct));
 }
 
 costume.addEventListener("click", (event) => {
@@ -200,371 +200,296 @@ var toyProduct = [
   },
 ];
 
-if (
-  localStorage.getItem("Shop - Costume") === null &&
-  localStorage.getItem("Shop - Decoration") === null &&
-  localStorage.getItem("Shop - Toy") === null
-) {
-  localStorage.setItem("Shop - Costume", JSON.stringify(costumeProduct));
-  localStorage.setItem("Shop - Decoration", JSON.stringify(decorationProduct));
-  localStorage.setItem("Shop - Toy", JSON.stringify(toyProduct));
-}
-window.addEventListener("load", () => {
-  var costumeFromLS = JSON.parse(localStorage.getItem("Shop - Costume"));
-  var decorationFromLS = JSON.parse(localStorage.getItem("Shop - Decoration"));
-  var toyFromLS = JSON.parse(localStorage.getItem("Shop - Toy"));
+localStorage.setItem("Shop - Costume", JSON.stringify(costumeProduct));
+localStorage.setItem("Shop - Decoration", JSON.stringify(decorationProduct));
+localStorage.setItem("Shop - Toy", JSON.stringify(toyProduct));
 
-  costumeFromLS.forEach((costume) => {
-    document.querySelector("ul#big-row-costume").insertAdjacentHTML(
-      "beforeend",
-      `
-            <li class="product">
-              <div class="product-img-cover">
-                <img
-                  class="product-img"
-                  src="${costume.image_url}"
-                />
-                <button id="${costume.name}" onclick="hello()">+1</button>
-              </div>
-              <a href="../html/detailproduct.html?id=${costume.id}"><h2 id="${costume.name}" class="product-name" onclick="productDetail(this)">${costume.name}</h2>
-              <h2>10.000 VND</h2>
-            </li>
-    `
-    );
-  });
-  decorationFromLS.forEach((decoration) => {
-    document.querySelector("ul#big-row-decoration").insertAdjacentHTML(
-      "beforeend",
-      `
-            <li class="product">
-              <div class="product-img-cover">
-                <img
-                  class="product-img"
-                  src="${decoration.image_url}"
-                />
-                <button id="${decoration.name}">+1</button>
-              </div>
-              <a href="../html/detailproduct.html?id=${decoration.id}"><h2 id="${decoration.name}" class="product-name" onclick="productDetail(this)">${decoration.name}</h2>
-              <h2>10.000 VND</h2>
-            </li>
-    `
-    );
-  });
-  toyFromLS.forEach((toy) => {
-    document.querySelector("ul#big-row-toy").insertAdjacentHTML(
-      "beforeend",
-      `
-            <li class="product">
-              <div class="product-img-cover">
-                <img
-                  class="product-img"
-                  src="${toy.image_url}"
-                />
-                <button id="${toy.name}">+1</button>
-              </div>
-              <a href="../html/detailproduct.html?id=${toy.id}"><h2 id="${toy.name}" class="product-name" onclick="productDetail(this)">${toy.name}</h2>
-              <h2>10.000 VND</h2>
-            </li>
-    `
-    );
-  });
+var costumeFromLS = JSON.parse(localStorage.getItem("Shop - Costume"));
+var decorationFromLS = JSON.parse(localStorage.getItem("Shop - Decoration"));
+var toyFromLS = JSON.parse(localStorage.getItem("Shop - Toy"));
+
+// window.addEventListener("load", () => {
+//   var costumeRender = costumeFromLS
+//     .map((costume) => {
+//       return `
+//       <li class="product">
+//       <div class="product-img-cover">
+//                       <img
+//                          class="product-img"
+//                          src="${costume.image_url}"
+//                        />
+//                      <button id="${costume.name}" class="add-instant">+1</button>
+//                      </div>
+//                      <a href="../html/detailproduct.html?id=${costume.id}"><h2 id="${costume.name}" class="product-name">${costume.name}</h2></a>
+//                      <h2>10.000 VND</h2>
+//         </li>
+//                      `;
+//     })
+//     .join("\n");
+
+//   let costumeProduct = document.getElementById("big-row-costume");
+//   costumeProduct.innerHTML = `
+// ${costumeRender}`;
+
+//   var decorationRender = decorationFromLS
+//     .map((decoration) => {
+//       return `
+//       <li class="product">
+//       <div class="product-img-cover">
+//                       <img
+//                          class="product-img"
+//                          src="${decoration.image_url}"
+//                        />
+//                      <button id="${decoration.name}" class="add-instant">+1</button>
+//                      </div>
+//                      <a href="../html/detailproduct.html?id=${decoration.id}"><h2 id="${decoration.name}" class="product-name">${decoration.name}</h2></a>
+//                      <h2>10.000 VND</h2>
+//                      </li>
+//                      `;
+//     })
+//     .join("\n");
+
+//   let decorationProduct = document.getElementById("big-row-decoration");
+//   decorationProduct.innerHTML = `
+// ${decorationRender}`;
+
+//   var toyRender = toyFromLS
+//     .map((toy) => {
+//       return `
+//   <li class="product">
+//   <div class="product-img-cover">
+//                   <img
+//                      class="product-img"
+//                      src="${toy.image_url}"
+//                    />
+//                  <button id="${toy.name}" class="add-instant">+1</button>
+//                  </div>
+//                  <a href="../html/detailproduct.html?id=${toy.id}"><h2 id="${toy.name}" class="product-name">${toy.name}</h2></a>
+//                  <h2>10.000 VND</h2>
+//     </li>
+//                  `;
+//     })
+//     .join("\n");
+
+//   let toyProduct = document.getElementById("big-row-toy");
+//   toyProduct.innerHTML = `
+// ${toyRender}`;
+
+  //   costumeFromLS.forEach((costume) => {
+  //     document.querySelector("ul#big-row-costume").insertAdjacentHTML(
+  //       "beforeend",
+  //       `
+  //             <li class="product">
+  //               <div class="product-img-cover">
+  //                 <img
+  //                   class="product-img"
+  //                   src="${costume.image_url}"
+  //                 />
+  //                 <button id="${costume.name}" class="add-instant">+1</button>
+  //               </div>
+  //               <a href="../html/detailproduct.html?id=${costume.id}"><h2 id="${costume.name}" class="product-name" onclick="productDetail(this)">${costume.name}</h2>
+  //               <h2>10.000 VND</h2>
+  //             </li>
+  //     `
+  //     );
+  //   });
+
+  //   decorationFromLS.forEach((decoration) => {
+  //     document.querySelector("ul#big-row-decoration").insertAdjacentHTML(
+  //       "beforeend",
+  //       `
+  //             <li class="product">
+  //               <div class="product-img-cover">
+  //                 <img
+  //                   class="product-img"
+  //                   src="${decoration.image_url}"
+  //                 />
+  //                 <button id="${decoration.name}" class="add-instant">+1</button>
+  //               </div>
+  //               <a href="../html/detailproduct.html?id=${decoration.id}"><h2 id="${decoration.name}" class="product-name" onclick="productDetail(this)">${decoration.name}</h2>
+  //               <h2>10.000 VND</h2>
+  //             </li>
+  //     `
+  //     );
+  //   });
+  //   toyFromLS.forEach((toy) => {
+  //     document.querySelector("ul#big-row-toy").insertAdjacentHTML(
+  //       "beforeend",
+  //       `
+  //             <li class="product">
+  //               <div class="product-img-cover">
+  //                 <img
+  //                   class="product-img"
+  //                   src="${toy.image_url}"
+  //                 />
+  //                 <button id="${toy.name}" class="add-instant">+1</button>
+  //               </div>
+  //               <a href="../html/detailproduct.html?id=${toy.id}"><h2 id="${toy.name}" class="product-name" onclick="productDetail(this)">${toy.name}</h2>
+  //               <h2>10.000 VND</h2>
+  //             </li>
+  //     `
+  //     );
+  //   });
+// });
+
+function showAccount() {
+  var account = document.getElementById("account");
+  if (account.style.display === "none") {
+    account.style.display = "block";
+  } else {
+    account.style.display = "none";
+  }
+}
+
+var searchInput = document.getElementById("search-input");
+searchInput.addEventListener("input", (e) => {
+  var searchValue = e.target.value.toUpperCase();
+  console.log(searchValue);
+  if (searchValue.length == "") {
+    document.getElementById("search-list").style.display = "none";
+  }
+  if (searchValue.length > 0) {
+    document.getElementById("search-list").style.display = "block";
+  }
+  if (document.getElementById("WITCH'S HAT").innerHTML.includes(searchValue)) {
+    document.getElementById("WITCH'S HAT").style.display = "block";
+  }
+  if (
+    document.getElementById("WITCH'S HAT").innerHTML.includes(searchValue) ===
+    false
+  ) {
+    document.getElementById("WITCH'S HAT").style.display = "none";
+  }
+  if (document.getElementById("WITCH'S CAPE").innerHTML.includes(searchValue)) {
+    document.getElementById("WITCH'S CAPE").style.display = "block";
+  }
+  if (
+    document.getElementById("WITCH'S CAPE").innerHTML.includes(searchValue) ===
+    false
+  ) {
+    document.getElementById("WITCH'S CAPE").style.display = "none";
+  }
+  if (
+    document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue)
+  ) {
+    document.getElementById("WITCH'S BROOM").style.display = "block";
+  }
+  if (
+    document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue) ===
+    false
+  ) {
+    document.getElementById("WITCH'S BROOM").style.display = "none";
+  }
+  if (
+    document.getElementById("JACK-O'-LANTERN").innerHTML.includes(searchValue)
+  ) {
+    document.getElementById("JACK-O'-LANTERN").style.display = "block";
+  }
+  if (
+    document
+      .getElementById("JACK-O'-LANTERN")
+      .innerHTML.includes(searchValue) === false
+  ) {
+    document.getElementById("JACK-O'-LANTERN").style.display = "none";
+  }
+  if (
+    document.getElementById("GHOST LIGHT BULB").innerHTML.includes(searchValue)
+  ) {
+    document.getElementById("GHOST LIGHT BULB").style.display = "block";
+  }
+  if (
+    document
+      .getElementById("GHOST LIGHT BULB")
+      .innerHTML.includes(searchValue) === false
+  ) {
+    document.getElementById("GHOST LIGHT BULB").style.display = "none";
+  }
+  if (document.getElementById("WALL CLOCK").innerHTML.includes(searchValue)) {
+    document.getElementById("WALL CLOCK").style.display = "block";
+  }
+  if (
+    document.getElementById("WALL CLOCK").innerHTML.includes(searchValue) ===
+    false
+  ) {
+    document.getElementById("WALL CLOCK").style.display = "none";
+  }
+  if (document.getElementById("STUFFED TOYS").innerHTML.includes(searchValue)) {
+    document.getElementById("STUFFED TOYS").style.display = "block";
+  }
+  if (
+    document.getElementById("STUFFED TOYS").innerHTML.includes(searchValue) ===
+    false
+  ) {
+    document.getElementById("STUFFED TOYS").style.display = "none";
+  }
+  if (document.getElementById("CANDY BUCKET").innerHTML.includes(searchValue)) {
+    document.getElementById("CANDY BUCKET").style.display = "block";
+  }
+  if (
+    document.getElementById("CANDY BUCKET").innerHTML.includes(searchValue) ===
+    false
+  ) {
+    document.getElementById("CANDY BUCKET").style.display = "none";
+  }
+  if (document.getElementById("MESSAGE CARD").innerHTML.includes(searchValue)) {
+    document.getElementById("MESSAGE CARD").style.display = "block";
+  }
+  if (
+    document.getElementById("MESSAGE CARD").innerHTML.includes(searchValue) ===
+    false
+  ) {
+    document.getElementById("MESSAGE CARD").style.display = "none";
+  }
 });
 
-  function showAccount() {
-    var account = document.getElementById("account");
-    if (account.style.display === "none") {
-      account.style.display = "block";
-    } else {
-      account.style.display = "none";
-    }
-  }
+var productsSearch = [
+  {
+    name: "WITCH'S HAT",
+    id: 0,
+  },
+  {
+    name: "WITCH'S CAPE",
+    id: 1,
+  },
+  {
+    name: "WITCH'S BROOM",
+    id: 2,
+  },
+  {
+    name: "JACK-O'-LANTERN",
+    id: 3,
+  },
+  {
+    name: "GHOST LIGHT BULB",
+    id: 4,
+  },
+  {
+    name: "WALL CLOCK",
+    id: 5,
+  },
+  {
+    name: "STUFFED TOYS",
+    id: 6,
+  },
+  {
+    name: "CANDY BUCKET",
+    id: 7,
+  },
+  {
+    name: "MESSAGE CARD",
+    id: 8,
+  },
+];
 
-  // document.getElementById("Witch's hat 1").onclick = function (e) {
-  //   console.log("Hello")
-  // }
-
-  // function addToCartInstant(addToCartBtn) {
-  //   var instantProduct = {
-  //     title: addToCartBtn.id,
-  //     number: 1,
-  //     money: 10,
-  //   };  
-  //   if (localStorage.getItem("Witch's hat") === null && instantProduct.title == "Witch's hat") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Witch's cape") === null && instantProduct.title == "Witch's cape") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Witch's broom") === null && instantProduct.title == "Witch's broom") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Jack-o'-lantern") === null && instantProduct.title == "Jack-o'-lantern") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Ghost light bulb") === null && instantProduct.title == "Ghost light bulb") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Wall clock") === null && instantProduct.title == "Wall clock") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Stuffed toys") === null && instantProduct.title == "Stuffed toys") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Candy bucket") === null && instantProduct.title == "Candy bucket") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-  //   if (localStorage.getItem("Message card") === null && instantProduct.title == "Message card") {
-  //     localStorage.setItem(instantProduct.title, JSON.stringify(instantProduct));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //     return;
-  //   }
-    
-  //   if (localStorage.getItem("Witch's hat") && instantProduct.title == "Witch's hat") {
-  //     var dataWH = JSON.parse(localStorage.getItem("Witch's hat"));
-  //     var productAdd = {
-  //       title: "Witch's hat",
-  //       number: dataWH.number + 1,
-  //       money: dataWH.money + 10,
-  //     };
-  //     localStorage.setItem("Witch's hat", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (localStorage.getItem("Witch's cape") && instantProduct.title == "Witch's cape") {
-  //     var dataWC = JSON.parse(localStorage.getItem("Witch's cape"));
-  //     var productAdd = {
-  //       title: "Witch's cape",
-  //       number: dataWC.number + 1,
-  //       money: dataWC.money + 10,
-  //     };
-  //     localStorage.setItem("Witch's cape", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (
-  //     localStorage.getItem("Witch's broom") &&
-  //     instantProduct.title == "Witch's broom"
-  //   ) {
-  //     var dataWB = JSON.parse(localStorage.getItem("Witch's broom"));
-  //     var productAdd = {
-  //       title: "Witch's broom",
-  //       number: dataWB.number + 1,
-  //       money: dataWB.money + 10,
-  //     };
-  //     localStorage.setItem("Witch's broom", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (
-  //     localStorage.getItem("Jack-o'-lantern") &&
-  //     instantProduct.title == "Jack-o'-lantern"
-  //   ) {
-  //     var dataJL = JSON.parse(localStorage.getItem("Jack-o'-lantern"));
-  //     var productAdd = {
-  //       title: "Jack-o'-lantern",
-  //       number: dataJL.number + 1,
-  //       money: dataJL.money + 10,
-  //     };
-  //     localStorage.setItem("Jack-o'-lantern", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (localStorage.getItem("Ghost light bulb") && instantProduct.title == "Ghost light bulb") {
-  //     var dataGL = JSON.parse(localStorage.getItem("Ghost light bulb"));
-  //     var productAdd = {
-  //       title: "Ghost light bulb",
-  //       number: dataGL.number + 1,
-  //       money: dataGL.money + 10,
-  //     };
-  //     localStorage.setItem("Ghost light bulb", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (localStorage.getItem("Wall clock") && instantProduct.title == "Wall clock") {
-  //     var dataWK = JSON.parse(localStorage.getItem("Wall clock"));
-  //     var productAdd = {
-  //       title: "Wall clock",
-  //       number: dataWK.number + 1,
-  //       money: dataWK.money + 10
-  //     };
-  //     localStorage.setItem("Wall clock", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (localStorage.getItem("Stuffed toys") && instantProduct.title == "Stuffed toys") {
-  //     var dataST = JSON.parse(localStorage.getItem("Stuffed toys"));
-  //     var productAdd = {
-  //       title: "Stuffed toys",
-  //       number: dataST.number + 1,
-  //       money: dataST.money + 10
-  //     };
-  //     localStorage.setItem("Stuffed toys", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (localStorage.getItem("Candy bucket") && instantProduct.title == "Candy bucket") {
-  //     var dataCB = JSON.parse(localStorage.getItem("Candy bucket"));
-  //     var productAdd = {
-  //       title: "Candy bucket",
-  //       number: dataCB.number + 1,
-  //       money: dataCB.money + 10
-  //     };
-  //     localStorage.setItem("Candy bucket", JSON.stringify(productAdd));
-  //     alert("You added 1 " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  //   if (localStorage.getItem("Message card") && instantProduct.title == "Message card") {
-  //     var dataMC = JSON.parse(localStorage.getItem("Message card"));
-  //     var productAdd = {
-  //       title: "Message card",
-  //       number: dataMC.number + 1,
-  //       money: dataMC.money + 10
-  //     };
-  //     localStorage.setItem("Message card", JSON.stringify(productAdd));
-  //     alert("You added " + quantity + " " + instantProduct.title + "(s) to cart");
-  //     location.reload();
-  //   }
-  // };
-
-  var searchInput = document.getElementById("search-input");
-  searchInput.addEventListener("input", (e) => {
-    var searchValue = e.target.value.toUpperCase();
-    console.log(searchValue);
-    if (searchValue.length == "") {
-      document.getElementById("search-list").style.display = "none";
-    }
-    if (searchValue.length > 0) {
-      document.getElementById("search-list").style.display = "block";
-    }
-    if (document.getElementById("WITCH'S HAT").innerHTML.includes(searchValue)) {
-      document.getElementById("WITCH'S HAT").style.display = "block";
-    }
-    if (document.getElementById("WITCH'S HAT").innerHTML.includes(searchValue) === false) {
-      document.getElementById("WITCH'S HAT").style.display = "none";
-    }
-    if (document.getElementById("WITCH'S CAPE").innerHTML.includes(searchValue)) {
-      document.getElementById("WITCH'S CAPE").style.display = "block";
-    }
-    if (document.getElementById("WITCH'S CAPE").innerHTML.includes(searchValue) === false) {
-      document.getElementById("WITCH'S CAPE").style.display = "none";
-    }
-    if (document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue)) {
-      document.getElementById("WITCH'S BROOM").style.display = "block";
-    }
-    if (document.getElementById("WITCH'S BROOM").innerHTML.includes(searchValue) === false) {
-      document.getElementById("WITCH'S BROOM").style.display = "none";
-    }
-    if (document.getElementById("JACK-O'-LANTERN").innerHTML.includes(searchValue)) {
-      document.getElementById("JACK-O'-LANTERN").style.display = "block";
-    }
-    if (document.getElementById("JACK-O'-LANTERN").innerHTML.includes(searchValue) === false) {
-      document.getElementById("JACK-O'-LANTERN").style.display = "none";
-    }
-    if (document.getElementById("GHOST LIGHT BULB").innerHTML.includes(searchValue)) {
-      document.getElementById("GHOST LIGHT BULB").style.display = "block";
-    }
-    if (document.getElementById("GHOST LIGHT BULB").innerHTML.includes(searchValue) === false) {
-      document.getElementById("GHOST LIGHT BULB").style.display = "none";
-    }
-    if (document.getElementById("WALL CLOCK").innerHTML.includes(searchValue)) {
-      document.getElementById("WALL CLOCK").style.display = "block";
-    }
-    if (document.getElementById("WALL CLOCK").innerHTML.includes(searchValue) === false) {
-      document.getElementById("WALL CLOCK").style.display = "none";
-    }
-    if (document.getElementById("STUFFED TOYS").innerHTML.includes(searchValue)) {
-      document.getElementById("STUFFED TOYS").style.display = "block";
-    }
-    if (document.getElementById("STUFFED TOYS").innerHTML.includes(searchValue) === false) {
-      document.getElementById("STUFFED TOYS").style.display = "none";
-    }
-    if (document.getElementById("CANDY BUCKET").innerHTML.includes(searchValue)) {
-      document.getElementById("CANDY BUCKET").style.display = "block";
-    }
-    if (document.getElementById("CANDY BUCKET").innerHTML.includes(searchValue) === false) {
-      document.getElementById("CANDY BUCKET").style.display = "none";
-    }
-    if (document.getElementById("MESSAGE CARD").innerHTML.includes(searchValue)) {
-      document.getElementById("MESSAGE CARD").style.display = "block";
-    }
-    if (document.getElementById("MESSAGE CARD").innerHTML.includes(searchValue) === false) {
-      document.getElementById("MESSAGE CARD").style.display = "none";
-    }
-  })
-  
-  var productsSearch = [
-    {
-      name: "WITCH'S HAT",
-      id: 0
-    },
-    {
-      name: "WITCH'S CAPE",
-      id: 1
-    },
-    {
-      name: "WITCH'S BROOM",
-      id: 2
-    },
-    {
-      name: "JACK-O'-LANTERN",
-      id: 3
-    },
-    {
-      name: "GHOST LIGHT BULB",
-      id: 4
-    },
-    {
-      name: "WALL CLOCK",
-      id: 5
-    },
-    {
-      name: "STUFFED TOYS",
-      id: 6
-    },
-    {
-      name: "CANDY BUCKET",
-      id: 7
-    },
-    {
-      name: "MESSAGE CARD",
-      id: 8
-    },
-  ];
-  
-  var searchListRender = productsSearch.map((user) => {
+var searchListRender = productsSearch
+  .map((user) => {
     return `
     <a href="../html/detailproduct.html?id=${user.id}"><h2 id="${user.name}">${user.name}</h2></a>
     `;
   })
   .join("\n");
-  
-  let searchList = document.getElementById("search-list");
-  searchList.innerHTML = `
+
+let searchList = document.getElementById("search-list");
+searchList.innerHTML = `
   ${searchListRender}
-  `
-  
+  `;
