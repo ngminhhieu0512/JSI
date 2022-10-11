@@ -166,6 +166,6 @@ ${searchListRender}
 function deleleStorage() {
     alert("Thank you!");
     localStorage.clear();
-    window.location.href = "../html/index.html"
+    window.location.href = "../index.html"
 }
 

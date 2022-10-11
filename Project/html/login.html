@@ -67,7 +67,7 @@
             loading.disabled = false;
             localStorage.setItem("User ID", JSON.stringify(auth.currentUser.uid));
             localStorage.removeItem("List Product");
-            window.location.href = "../html/index.html";
+            window.location.href = "../index.html";
           })
           .catch((error) => {
             alert("Wrong email or password");
