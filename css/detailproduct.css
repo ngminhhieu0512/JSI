@@ -327,7 +327,7 @@ a {
 #alert h1 {
   font-size: 20px;
 }
-#alert h1, #alert h2 {
+#alert h1, #alert a {
   color: black;
   text-align: center;
 }
