@@ -127,7 +127,7 @@
                 <span> 10.000 VND/1p</span>
               </div>
             </h2>
-            <div class="order-quantity">
+            <div id="order-quantity">
               <button id="decrease" onclick="decrease()">-</button>
               <div id="quantity-number"></div>
               <button id="increase" onclick="increase()">+</button>
@@ -136,6 +136,10 @@
             <button class="addtocart" id="add-product">
               <h2>Add to cart</h2>
             </button>
+            <div id="alert">
+              <h1>You need to log in first in order to buy tickets for the party</h1>
+              <a href="../html/login.html"><h2>Log in here</h2></a>
+            </div>
           </div>
         </div>
       </div>
@@ -181,7 +185,10 @@
         if (user) {
           console.log(user);
         } else {
-        }
+          document.getElementById("add-product").style.display = "none";
+          document.getElementById("order-quantity").style.display = "none";
+          document.getElementById("alert").style.display = "block";
+       }
       });
 
       var listProductRD = [];

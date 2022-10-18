@@ -92,6 +92,7 @@ var hide6 = document.getElementById("hide-detail-6");
 show6.addEventListener("click", () => {
   quiz.style.display = "block";
   activityContainer.style.display = "none";
+  footer.style.marginTop = "80vh";
 });
 hide6.addEventListener("click", () => {
   quiz.style.display = "none";
